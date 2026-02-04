@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        My Schools Webpage
+    </title>
+</head>
+
+<body>
+    <h1>Aga Khan Academy Dhaka</h1>
+    <i>Ka-65/1, Kuratoli Dhaka-1229, Bangladesh</i>
+    <br> <mark> Students enrolled:750</mark>
+    <br> <b>Educational board: IB</b>
+
+</body>
+
+</html>
