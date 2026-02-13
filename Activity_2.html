@@ -2,28 +2,31 @@
 <html>
 
 <head>
-    <tile>HTML Content </tile>
+    <title>Forms in HTML</title>
 </head>
 
 <body>
-    <h1>Ordered List</h1>
-    <ol>
-        <li>Pizza</li>
-        <li>Fries</li>
-    </ol>
-    <h1>Unordered List</h1>
-    <ul>
-        <li>Siarra</li>
-        <li>Safreen</li>
-    
-    </ul>
-    <h1>Definition List</h1>
-    <dl>
-    <dt>Tea</dt>
-    <dd>-A hot drink</dd>
+    <form>
+        <fieldset>
+            <legend>Personal Information Form</legend>
+            <label>Name:</label>
+            <br>
+            <input type="text" id="name">
+            <br>
+            <label>Email:</label>
+            <br><input type="text" id="email">
+            <br>
+            <label>Password:</label>
+            <br><input type="password">
+            <br><br><label>Gender</label>
+            <br><input type="radio" id="male" value="male">Male
+            <br><input type="radio" id="female">Female
+            <br><br><label>Date of Birth:</label>
+            <br><input type="date" id="birthday">
+        </fieldset>
+    </form>
 
-</dl>
+
 </body>
-
 
 </html>
