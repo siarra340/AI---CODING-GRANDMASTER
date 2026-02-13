@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forms in HTML</title>
+</head>
+
+<body>
+
+    <form>
+
+        <fieldset>
+
+            <legend>Personal Information and Marks </legend>
+
+            <label>Name:</label>
+            <br><input type="text" id="name">
+            <br><label>Email:</label>
+            <br><input type="email" id="email">
+            <br><label>Password (hidden):</label>
+            <br><input type="password" id="password">
+            <br><label>Date of Birth</label>
+            <br><input type="date" id="birthdate">
+
+            <br><br><label>Gender</label>
+            <br><input type="radio" id="female" value="female">Female
+            <br><input type="radio" id="male" value="male">Male
+            <br><br><label>Age:</label>
+            <br><input type="number" id="age">
+
+            <br><br><label>Favourite Time of Day</label>
+            <br><input type="checkbox" id="day" value="Morning">Morning
+            <br><input type="checkbox" id="city" value="Afternoon">Afternoon
+            <br><br><label>Mark Recived on Test (out of 3)</label>
+            <br>English<select name="mark" id="v1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <br>Math<select name="mark2" id="v2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <br><br> Average:<output name="a" for="v1 v2"></output>
+
+            </select>
+        </fieldset>
+    </form>
+
+
+
+</body>
+
+
+</html>
