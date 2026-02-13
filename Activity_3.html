@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html>
-<table border="4">
-    <tr>
-        <th>Vegtables</th>
-        <th>Fruit</th>
-        <th>Dessert</th>
-    </tr>
-    <tr>
-        <td>Carrot</td>
-        <td>Apple</td>
-        <td>Cake</td>
-    </tr>
+
+<head>
+    <title>Forms in HTML</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legand><b>Marks for Students</b></legand>
+            <br><br><label>Name:</label>
+            <br><input type="text" id="name">
+            <br><br><label>Enter Marks</label>
+            <br><select name="subject" id="subject">
+                <option value="math">Math</option>
+                <option value="english">English</option>
+                <option value="science">Science</option>
+                <input type="number" id="v1" name="v1">
+                <br>
+                <select name="subject2" id="subject2">
+                    <option value="Math">Math</option>
+                    <option value="English">English</option>
+                    <option value="Science">Science</option>
+                    <input type="number" id="v2" name="v2">
+
+                    <br> <select name="subject3" id="subject3">
+                        <option value="Math">Math</option>
+                        <option value="English">English</option>
+                        <option value="Science">Sceince</option>
+                        <input type="number" id="v3" name="v3">
+
+                        <br><br> Average: <output name="a" for="v1 v2 v3">
+                        </output>
+        </fieldset>
+
+    </form>
 
 
-</table>
+</body>
 
 </html>
