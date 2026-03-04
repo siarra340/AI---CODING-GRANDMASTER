@@ -2,31 +2,32 @@
 <html>
 
 <head>
-    <title>Forms in HTML</title>
+    <title>Backgrounds in CSS</title>
+
+    <style>
+        h1 {
+            height: 300px;
+            background-color: green;
+            background: linear-gradient(to bottom, blue, purple, pink);
+        }
+
+        #grad1 {
+
+            height: 400px;
+            background: radial-gradient(circle, pink 10%, yellow, orange, red)
+        }
+    </style>
+
+
+
 </head>
 
 <body>
-    <form>
-        <fieldset>
-            <legend>Personal Information Form</legend>
-            <label>Name:</label>
-            <br>
-            <input type="text" id="name">
-            <br>
-            <label>Email:</label>
-            <br><input type="text" id="email">
-            <br>
-            <label>Password:</label>
-            <br><input type="password">
-            <br><br><label>Gender</label>
-            <br><input type="radio" id="male" value="male">Male
-            <br><input type="radio" id="female">Female
-            <br><br><label>Date of Birth:</label>
-            <br><input type="date" id="birthday">
-        </fieldset>
-    </form>
 
+    <h1>Hello World</h1>
+    <div id="grad1">
 
+    </div>
 </body>
 
 </html>
