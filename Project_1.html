@@ -4,69 +4,72 @@
 
 <head>
 
-    <link href="styles.css" rel="stylesheet" type="text/css" />
 
     <style>
-        input[type="email"] {
-            border: 3px solid green;
-
+        #text1 {
+            color: blue;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 19px;
         }
 
-        input[type="password"] {
-            border: 3px solid blue;
+        .p1 {
+            color: blueviolet;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
-        ul>li {
-            color: rgb(86, 50, 9);
+        #transform {
+            width: 200px;
+            height: 90px;
+            background-color: yellow;
+            border: 1px solid black;
+            transform: rotateX(180deg);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
-        h1+p::before {
-            content: "💻"
-        }
-
-        h1+p {
-            color: brown
-        }
-
-        a:hover {
-            color: rgb(255, 191, 127);
-        }
-
-        li:nth-child(2) {
+        .decoration {
+            color: rgb(49, 49, 225);
             text-decoration: underline;
-            background-color: rgb(249, 225, 225);
+            text-transform: uppercase;
+
         }
 
-        i:not(.class1) {
-            border: 3px red dashed;
+        h2 {
+            text-decoration: underline overline;
+            text-transform: lowercase;
         }
 
-        h1::first-letter {
-            font-size: 80px;
-            color: rgb(240, 149, 58)
+        #shadow {
+            text-shadow: 3px 3px 5px rgb(49, 221, 49);
+            gr
+        }
+
+        #box {
+            box-shadow: 5px 5px 10px black;
+        }
+
+        #indent {
+            text-indent: 25%
         }
     </style>
 
 </head>
 
+<h1>This is different ways to style text in CSS</h1>
+<p id="text1">This is codingal</p>
+<p class="p1">This is codingal</p>
+<p id="transform"> This is a text transformation</p>
+<h1 class="decoration">Hello</h1>
+<h2>HELLO</h2>
+
+<h1 id="shadow">Text-shadow example</h1>
+<h1 id="box">Box-shadow example</h1>
+<div>
+    <p>Text indent is when the text has a space after the margin, like the example bellow </p>
+    <p id="indent">Text indent</p>
+</div>
 
 
-<body>
 
-    <h1>This is Advanced Selectors</h1>
-    <p>These selectors can be used to change color, add text decoraction, and etc.</p>
-    <a href="#">Hover over this</a>
-
-
-    <br><br><input type="email" placeholder="Email"> <br><br><input type="password" placeholder="Password">
-    <ul>
-        <li>Apples</li>
-        <li>Grapes</li>
-        <li>Bannana</li>
-    </ul>
-
-    <i class="class1">Div 1</i>
-    <br><i class="class2">Div 2</i>
 
 </body>
 
