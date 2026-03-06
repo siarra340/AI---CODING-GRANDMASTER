@@ -1,74 +1,73 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <title>Backgrounds in CSS</title>
+
+    <link href="styles.css" rel="stylesheet" type="text/css" />
 
     <style>
-        h1 {
-            background-image: url(images.png);
-            height: 150px;
-            width: 500px;
-            background-position: bottom right;
-            background-repeat: space;
-            background-attachment: scroll;
+        input[type="email"] {
+            border: 3px solid green;
+
         }
 
-        p {
-            background-color: pink
+        input[type="password"] {
+            border: 3px solid blue;
         }
 
-        #grad1 {
-            font-size: 30px;
-            height: 300px;
-            width: 200px;
-            background: linear-gradient(to left, pink, yellow, orange)
+        ul>li {
+            color: rgb(86, 50, 9);
         }
 
-        #grad2 {
-            font-size: 25px;
-            color: rgb(207, 137, 25);
-            height: 200px;
-            background: radial-gradient(rgb(117, 117, 228) 5%, rgb(198, 86, 198) 20%, rgb(255, 255, 154) 70%)
+        h1+p::before {
+            content: "💻"
         }
 
-        @keyframe hello {
-            0% {
-                background-color: green;
-            }
-
-            25% {
-                background-color: purple;
-            }
-
-            50% {
-                background-color: blue;
-            }
-
-            100% {
-                background-color: orange;
-            }
+        h1+p {
+            color: brown
         }
 
-        #element {
-            width: 200px;
-            height: 150px;
-            background-color: rgb(231, 130, 130);
-            animation-name: hello;
-            animation-duration: 5s;
+        a:hover {
+            color: rgb(255, 191, 127);
+        }
+
+        li:nth-child(2) {
+            text-decoration: underline;
+            background-color: rgb(249, 225, 225);
+        }
+
+        i:not(.class1) {
+            border: 3px red dashed;
+        }
+
+        h1::first-letter {
+            font-size: 80px;
+            color: rgb(240, 149, 58)
         }
     </style>
+
 </head>
 
-<body>
-    <h1>Hello World</h1>
-    <p>This is how to change the background color</p>
-    <i id="grad1">Hello World</i>
-    <br><br>
-    <div id="grad2">This is a radial gradient</div>
 
-    <br>
-    <div id="element">Hello</div>
+
+<body>
+
+    <h1>This is Advanced Selectors</h1>
+    <p>These selectors can be used to change color, add text decoraction, and etc.</p>
+    <a href="#">Hover over this</a>
+
+
+    <br><br><input type="email" placeholder="Email"> <br><br><input type="password" placeholder="Password">
+    <ul>
+        <li>Apples</li>
+        <li>Grapes</li>
+        <li>Bannana</li>
+    </ul>
+
+    <i class="class1">Div 1</i>
+    <br><i class="class2">Div 2</i>
+
 </body>
 
 </html>
