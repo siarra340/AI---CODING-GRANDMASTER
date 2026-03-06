@@ -1,35 +1,74 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <title>Backgrounds in CSS</title>
+
+    <link href="styles.css" rel="stylesheet" type="text/css" />
 
     <style>
-        h1 {
-            background-color: aquamarine;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: top right;
-            background: linear-gradient(red, orange, yellow, green, blue);
-        }
-
-        p {
-            background-color: blue;
+        p::first-letter {
+            font-size: 200%;
+            color: rgb(244, 191, 118)
         }
 
         body {
-            background-image: url("image.jpg");
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-position: top right;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        ul>li::before {
+            content: "🚀";
+
+        }
+
+        ul>li:hover {
+            color: red;
+        }
+
+        ul li:nth-child(4) {
+            background-color: rgb(248, 122, 122);
+        }
+
+        p:not(:first-of-type) {
+            text-decoration: underline;
+        }
+
+        a::after {
+            content: "🪐";
         }
     </style>
+
 </head>
 
 <body>
-    <h1>Hello World</h1>
-    <p>Text Backgound in CSS</p>
-    <i>Hello World</i>
+
+    <h1>Welcome to the Space Explorer's Club</h1>
+
+    <ul>
+
+        <li>Moon Missions</li>
+
+        <li>Mars Rovers</li>
+
+        <li>International Space Station</li>
+
+        <li>Telescopes and Stars</li>
+
+        <li>Black Holes Mysteries</li>
+
+    </ul>
+
+    <p>Space exploration has always captivated human imagination. It's a journey to the unknown!</p>
+
+    <p>From the Moon to distant galaxies, we continue to explore the vastness of space.</p>
+
+    <a href="#">Join our Mission</a>
+
+    <a href="#">Latest Space News</a>
+
+    <a href="#">Gallery of the Universe</a>
+
 </body>
 
 </html>
