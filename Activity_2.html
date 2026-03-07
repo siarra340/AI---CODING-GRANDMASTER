@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-
+    <title>Box Model</title>
 
     <style>
-        div {
-            width: 300px;
-            height: 100px;
-            background-color: rgb(28, 176, 221);
-            border: 1px solid black;
+        #flowerRight {
+            float: right;
+
+
         }
 
-        #div1 {
-            transform: rotateX(180deg);
+        #floweLeft {
+            float: left;
         }
     </style>
 
+
 </head>
 
-
-
 <body>
-    <h1>Welcome to Codingal</h1>
-    <p>This is the rotate method...</p>
-    <div>Codingal</div>
-    <div id="div1">Codingal</div>
 
+
+
+    <h2>Float Right</h2>
+
+
+    <p>In this example, the image will float to the right in the paragraph, and the text in the paragraph will wrap
+        around the image.</p>
+
+
+    <p>
+
+        <img id="flowerRight" src="image.jpg" alt="tree" style="width:100px;height:100px;">
+
+        <img id="flowerLeft" src="image.jpg" alt="tree" style="width:50px;height:100px;">
+
+        This is a dummy content used to understand float property
+
+    </p>
 
 </body>
 
