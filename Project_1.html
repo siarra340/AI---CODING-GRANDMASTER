@@ -1,61 +1,98 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <title>Box Model</title>
-
     <style>
-        .example {
+        div.static {
+
+            border: 2px solid orange
+        }
+
+        div.absolute {
+            position: absolute;
+            left: 30px;
+            border: 2px solid rgba(168, 244, 127, 0.679);
+
+        }
+
+        div.relative {
+            position: relative;
+            left: 50px;
+            border: 2px solid orange;
+        }
+
+        div.fixed {
+            position: fixed;
+            down: 50px;
+            right: 30px;
             width: 200px;
-            background-color: rgb(113, 216, 113);
-            padding: 20px;
-            border: 2px solid rgb(231, 231, 57);
-            margin: 15px
+            border: 2px solid orange
         }
 
-        .box {
-            width: 300px;
-            background-color: rgb(93, 157, 221);
-            padding: 50px;
-            border: 5px solid purple;
+        div.sticky {
+            position: sticky;
+            top: 2px;
+            left: 30px;
+            width: 200px;
+            border: 2px solid orange;
         }
 
-        hr {
-            background: rgb(241, 133, 66);
+        div.one {
+            opacity: 0.1;
+            background-color: orange;
         }
 
-        img#flower1 {
-            float: right
+        div.two {
+            opacity: 0.6;
+            background-color: orange;
         }
 
-        img#flower2 {
-            float: left
+        div.three {
+            background-color: orange;
         }
     </style>
-
-
 </head>
 
 <body>
-    <h1>Box Model and Float</h1>
-    <p class="example">The box model can be used to add padding, borders and margins to a text.</p>
-    <hr style="width:15%; height:20px; color: orange;">
 
-    <p class="box">The box model can be useful in styling an organizing a website</p>
-    <hr style="width:50%;height:5px; color:orange">
+    <h1>Positioning</h1>
+    <div class="static">Static div with no postion property</div>
 
-    <p>
+    <div class="sticky">This is a div with a sticky property
+    </div>
 
-        <img id="flower1" src="float.png" alt="flower" style="width:100px;height:200;">
-        <img id="flower2" src="float.png" alt="flower" style="width:100px; height:100px">
+    <div class="relative">
+        This div used the property relative
+    </div>
 
-        This is an example of how it will look like when you float an image
-    </p>
+    <div class="absolute">
+        This div uses the absolute element
+    </div>
+
+    <div class="fixed">
+        This div uses the fixed property
+    </div>
+    <br><br><br>
+    <h1>Opacity Property</h1>
+
+    <div class="one">Opacity 0.1</div>
+    <div class="two">Opacity 0.6</div>
+    <div class="three">Default opacity (1)</div>
+
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
 
 
 
 </body>
-
-
 
 </html>
