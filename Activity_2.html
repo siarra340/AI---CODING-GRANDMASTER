@@ -1,44 +1,43 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <title>Box Model</title>
-
     <style>
-        #flowerRight {
-            float: right;
-
-
+        div {
+            background-color: rgb(66, 153, 210);
+            padding: 10px;
         }
 
-        #floweLeft {
-            float: left;
+        div.one {
+            opacity: 0.1;
+        }
+
+        div.two {
+            opacity: 0.5;
+        }
+
+        div.three {
+            opacity: 0.7;
         }
     </style>
-
-
 </head>
 
 <body>
+    <h1>Opacity Property Example</h1>
+    <div class="one">
+        <p>Opacity 0.1</p>
+    </div>
+    <div class="two">
+        <p>Opacity 0.5</p>
+    </div>
+    <div class="three">
+        <p>Opacity 0.7</p>
+    </div>
 
-
-
-    <h2>Float Right</h2>
-
-
-    <p>In this example, the image will float to the right in the paragraph, and the text in the paragraph will wrap
-        around the image.</p>
-
-
-    <p>
-
-        <img id="flowerRight" src="image.jpg" alt="tree" style="width:100px;height:100px;">
-
-        <img id="flowerLeft" src="image.jpg" alt="tree" style="width:50px;height:100px;">
-
-        This is a dummy content used to understand float property
-
-    </p>
+    <div class="four">
+        <p>Opacity 1 (default)</p>
+    </div>
 
 </body>
 
