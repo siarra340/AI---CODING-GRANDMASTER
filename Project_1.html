@@ -1,76 +1,61 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-
+    <title>Box Model</title>
 
     <style>
-        #text1 {
-            color: blue;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 19px;
-        }
-
-        .p1 {
-            color: blueviolet;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        }
-
-        #transform {
+        .example {
             width: 200px;
-            height: 90px;
-            background-color: yellow;
-            border: 1px solid black;
-            transform: rotateX(180deg);
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(113, 216, 113);
+            padding: 20px;
+            border: 2px solid rgb(231, 231, 57);
+            margin: 15px
         }
 
-        .decoration {
-            color: rgb(49, 49, 225);
-            text-decoration: underline;
-            text-transform: uppercase;
-
+        .box {
+            width: 300px;
+            background-color: rgb(93, 157, 221);
+            padding: 50px;
+            border: 5px solid purple;
         }
 
-        h2 {
-            text-decoration: underline overline;
-            text-transform: lowercase;
+        hr {
+            background: rgb(241, 133, 66);
         }
 
-        #shadow {
-            text-shadow: 3px 3px 5px rgb(49, 221, 49);
-            gr
+        img#flower1 {
+            float: right
         }
 
-        #box {
-            box-shadow: 5px 5px 10px black;
-        }
-
-        #indent {
-            text-indent: 25%
+        img#flower2 {
+            float: left
         }
     </style>
 
+
 </head>
 
-<h1>This is different ways to style text in CSS</h1>
-<p id="text1">This is codingal</p>
-<p class="p1">This is codingal</p>
-<p id="transform"> This is a text transformation</p>
-<h1 class="decoration">Hello</h1>
-<h2>HELLO</h2>
+<body>
+    <h1>Box Model and Float</h1>
+    <p class="example">The box model can be used to add padding, borders and margins to a text.</p>
+    <hr style="width:15%; height:20px; color: orange;">
 
-<h1 id="shadow">Text-shadow example</h1>
-<h1 id="box">Box-shadow example</h1>
-<div>
-    <p>Text indent is when the text has a space after the margin, like the example bellow </p>
-    <p id="indent">Text indent</p>
-</div>
+    <p class="box">The box model can be useful in styling an organizing a website</p>
+    <hr style="width:50%;height:5px; color:orange">
 
+    <p>
+
+        <img id="flower1" src="float.png" alt="flower" style="width:100px;height:200;">
+        <img id="flower2" src="float.png" alt="flower" style="width:100px; height:100px">
+
+        This is an example of how it will look like when you float an image
+    </p>
 
 
 
 </body>
+
+
 
 </html>
