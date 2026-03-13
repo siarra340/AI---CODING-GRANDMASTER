@@ -3,40 +3,43 @@
 <html>
 
 <head>
-    <style>
-        div {
-            background-color: rgb(66, 153, 210);
-            padding: 10px;
-        }
 
-        div.one {
-            opacity: 0.1;
-        }
 
-        div.two {
-            opacity: 0.5;
-        }
 
-        div.three {
-            opacity: 0.7;
-        }
-    </style>
+    <title>Bootstrap Example</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 
+
+
+
 <body>
-    <h1>Opacity Property Example</h1>
-    <div class="one">
-        <p>Opacity 0.1</p>
-    </div>
-    <div class="two">
-        <p>Opacity 0.5</p>
-    </div>
-    <div class="three">
-        <p>Opacity 0.7</p>
+
+    <div class="container">
+        <h1>Hello Everyone!</h1>
+        <p>You can resize the browser window to see the effect</p>
+    </div class=row>
+
+    <div class="col-md-8 col-xs-4" style="background-color: rgb(25, 161, 239); border:1px solid green">xs</div>
+
+    <div class="col-md-12 col-md-5" style="background-color: rgb(239, 175, 71);"> .col-xs-3 </div>
     </div>
 
-    <div class="four">
-        <p>Opacity 1 (default)</p>
+    <div class="row">
+        <div class="col-md-12 col-lg-6" style="background-color: rgb(177, 118, 240);">.col-xs-6</div>
+
+        <div class="col-xs-6 col-md-2" style="background-color: rgb(156, 240, 119);">.col-xs-6</div>
+
+    </div>
+
+    <div class="row" style="background-color: rgb(255, 170, 172);">
+
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">. col-xs-6</div>
+
+
     </div>
 
 </body>
