@@ -3,95 +3,62 @@
 <html>
 
 <head>
+
+
+    <title>Bootstrap</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <style>
-        div.static {
-
-            border: 2px solid orange
-        }
-
-        div.absolute {
-            position: absolute;
-            left: 30px;
-            border: 2px solid rgba(168, 244, 127, 0.679);
-
-        }
-
-        div.relative {
-            position: relative;
-            left: 50px;
-            border: 2px solid orange;
-        }
-
-        div.fixed {
-            position: fixed;
-            down: 50px;
-            right: 30px;
-            width: 200px;
-            border: 2px solid orange
-        }
-
-        div.sticky {
-            position: sticky;
-            top: 2px;
-            left: 30px;
-            width: 200px;
-            border: 2px solid orange;
-        }
-
-        div.one {
-            opacity: 0.1;
-            background-color: orange;
-        }
-
-        div.two {
-            opacity: 0.6;
-            background-color: orange;
-        }
-
-        div.three {
-            background-color: orange;
+        .col {
+            text-align: center;
+            border: 2px solid rgb(79, 85, 204);
+            background-color: bisque;
         }
     </style>
+
 </head>
+
 
 <body>
 
-    <h1>Positioning</h1>
-    <div class="static">Static div with no postion property</div>
+    <div class="container">
 
-    <div class="sticky">This is a div with a sticky property
-    </div>
+        <h1>This is Unequal Grids using Bootstrap</h1>
+        <p>Resize the browser window to see the different effects</p>
 
-    <div class="relative">
-        This div used the property relative
-    </div>
+        <div class="row">
 
-    <div class="absolute">
-        This div uses the absolute element
-    </div>
+            <div class="col-md-2 col-xs-10"
+                style="background-color:rgb(53, 145, 57); border:2px solid rgb(249, 249, 135)">xs
 
-    <div class="fixed">
-        This div uses the fixed property
-    </div>
-    <br><br><br>
-    <h1>Opacity Property</h1>
+            </div>
 
-    <div class="one">Opacity 0.1</div>
-    <div class="two">Opacity 0.6</div>
-    <div class="three">Default opacity (1)</div>
+            <div class="container">
 
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
+                <h1>Equal width columns</h1>
+
+                <div class="row">
+
+                    <div class="col">column 1</div>
+                    <div class="col">column 2</div>
+                    <div class="col">column 3</div>
+                </div>
+            </div>
 
 
+            <div class="container-fluid"></div>
+            <h1>This is a large Grid</h1>
+
+            <div class="row">
+                <div class="col-lg-6" style="background-color: blueviolet;">Dummy
+                </div>
+
+
+
+
+
+            </div>
 
 </body>
 
