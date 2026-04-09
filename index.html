@@ -1,57 +1,92 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
-    <title>Introduction to CSS</title>
 
-    <style>
-        h2 {
-            color: brown
-        }
+    <title>Bootstrap Example</title>
 
-        .para {
-            color: green
-        }
+    <meta charset="utf-8">
 
-        #text {
-            color: red;
-            background-color: lightblue;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        * {
-            color: gold;
-            background-color: orange;
-        }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        h3,
-        p,
-        i {
-            color: black
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 
-    <h1 style="color:blue"> Inline CSS Element</h1>
+    <div class="container">
 
-    <h2>Internal CSS Element</h2>
+        <h2>Carousel Example</h2>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+
+            <ol class="carousel-indicators">
+
+                <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
+
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+
+            </ol>
+
+            <!-- Wrapper for slides -->
+
+            <div class="carousel-inner">
 
 
-    <p class="para">Changing Color with Class Selector</p>
+                <div class="item active">
 
-    <b id="text"> This is an id selector</b>
+                    <img src="img-1.jpg" alt="Image 1">
+
+                </div>
+
+
+                <div class="item">
+
+                    <img src="img-2.jpg" alt="Image 2">
+
+                </div>
+
+                <div class="item">
+                    <img src="img-3.jpg" alt="Image 3">
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+
+                <span class="glyphicon glyphicon-chevron-left"></span>
+
+                <span class="sr-only">Prev</span>
+
+            </a>
+
+
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
+                <span class="glyphicon glyphicon-chevron-right"></span>
+
+                <span class="sr-only">Next</span>
+
+            </a>
 
 
 
-    <h3>This is group selector</h3>
-    <p>This is group selector</p>
-    <i>This is group selector</i>
+        </div>
+
+    </div>
 
 </body>
-
 
 </html>
