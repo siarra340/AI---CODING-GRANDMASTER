@@ -1,70 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
-<head>
+<body>
 
-    <title>Bootstrap Example</title>
+    <h1>Variables in JavaScript</h1>
+    <p>The sum of two Numbers</p>
+    <p id="result"></p>
 
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    #section1 {padding-top:60px; height:450px;color:white; background-color:green;}
-
-    #section2{ padding-top:60px;height: 450px;}
-
-</head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-
-        <div class="container-fluid">
-
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="#">Eduction</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="myNavbar">
-
-                <ul class="nav navbar-nav">
-                    <li><a href="#section 1">Section 1</a></li>
-                    <li><a href="#section2">Section 2</a> </li>
-                </ul>
-            </div>
-
-        </div>
-
-    </nav>
-
-    <div id="section1" class="container-fluid">
-
-        <h1>Section 1</h1>
-        <h2>Codingal</h2>
-        <p>Codingal is a learning platform used to teach and develop kids coding skills.</p>
-    </div>
-
-    <div id="section2" class="container-fluid">
-        <h1>Section 2</h1>
-        <h2>Importance of Coding</h2>
-        <p>Coding can be an effective way in sharpening students brains as well as creating websites and other tools.
-        </p>
-    </div>
+    <script>
+        var num1 = 7;
+        var num2 = 3;
+        var sum = num1 + num2;
+        document.getElementById("result").innerHTML = "The total sum is:" + sum;
+    </script>
 
 </body>
 
