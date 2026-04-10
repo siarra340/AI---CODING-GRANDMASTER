@@ -1,142 +1,45 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
-<head>
+<body>
 
-    <title>Bootstrap Example</title>
+    <h1>JavaScript Simple Calculations</h1>
+    <p>10÷5</p>
+    <p id="result"></p>
 
-    <meta charset="utf-8">
+    <p>8-6=</p>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <p id="demo"></p>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <p>3*16=</p>
+    <p id="multiply"></p>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //division using JavaScript
+        var num1 = 10;
+        var num2 = 5;
+        var sum = num1 / num2;
+        document.getElementById("result").innerHTML = "The result of this calculation: " + sum;
+    </script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        //Statement
+        var a, b, c;
+        a = 8;
+        b = 2;
+        c = a - b;
+        document.getElementById("demo").innerHTML = "The value after subtraciting is: " + c
+    </script>
 
-    #Home{
-    padding-top:200px
-    }
-
-    #About{
-    padding:100px;
-    }
-
-
-
-    body{
-    position:relative;
-    }
-
-
-
-</head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-
-        <div class="container-fluid">
-
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </button>
-
-                <a class="navbar-brand" href="#">Condigal</a>
-
-            </div>
+    <script>
+        var x = 6;
+        var y = 3;
+        var z = x * y;
+        document.getElementById("multiply").innerHTML = "This is the product of after multipying: " + z
+    </script>
 
 
-        </div>
-
-        <div class="collapse navbar-collapse" id="myNavbar">
-
-            <ul class="nav navbar-nav">
-                <li><a href="#Home">Home</a> </li>
-                <li><a href="#About">About</a> </li>
-                <li><a href="#Contact">Contact</a> </li>
-            </ul>
-
-        </div>
-
-    </nav>
-
-
-
-
-    <div class="container-fluid" id="Home">
-
-
-        <h1>Home</h1>
-        <p>These are different pictures of cats </p>
-
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-            <ol class="carousel-indicators">
-
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-
-            </ol>
-
-            <div class="carousel-inner">
-
-                <div class="item active">
-                    <img src="img.webp" alt="image 1">
-                </div>
-
-                <div class="item">
-                    <img src="img-2.avif" alt="image 2">
-                </div>
-
-                <div class="item">
-                    <img src="img-3.webp" alt="image 3">
-
-
-
-                </div>
-
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-
-                    <span class=" glyphicon glyphicon-chevron-left"></span>
-
-                    <span class="sr-only">Prev</span>
-
-
-                </a>
-
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-
-                    <span class="sr-only">Next</span>
-
-                </a>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div id="About" class="container-fluid">
-        <h1>About</h1>
-        <p>Cats are also known as domestic cats/house cats. They are carnivorous animals. The daily sleep cats get is
-            12-16 hours.</p>
-    </div>
-
-    <div id="Contact" class="container-fluid">
-        <h1>Contact</h1>
-        <p>Go to Instagram or Facebook </p>
-    </div>
 
 </body>
 
