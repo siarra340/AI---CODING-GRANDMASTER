@@ -2,18 +2,31 @@
 
 <html>
 
-<body>
+<head>
 
-    <h1>Variables in JavaScript</h1>
-    <p>The sum of two Numbers</p>
-    <p id="result"></p>
+</head>
+
+<body>
+    <p>Functions can access other functions which are defined within the variable. </p>
+    <button type="button" onclick="myFunction()">Click this Button</button>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
 
     <script>
-        var num1 = 7;
-        var num2 = 3;
-        var sum = num1 + num2;
-        document.getElementById("result").innerHTML = "The total sum is:" + sum;
+
+        var b = 9;
+        function myFunction() {
+            var a = 2;
+            document.getElementById("demo1").innerHTML = a * b;
+        }
+        document.getElementById("demo2").innerHTML = b
+        document.getElementById("demo1").innerHTML = a
+
+
     </script>
+
+
 
 </body>
 
