@@ -4,20 +4,17 @@
 
 <body>
 
-    <h1 id="myH"></h1>
-    <p id="myP"> </p>
+    <h2>JavaScript For Loop</h2>
+
+    <p id="demo"></p>
 
     <script>
-
-        //The Heading:
-        document.getElementById("myH").innerHTML = "Javascript Header";
-
-        //My Paragraph:
-        document.getElementById("myP").innerHTML = "My javascript paragraph";
-
-
+        var person = {
+            name: "Siarra",
+            age: 14,
+        }
+        document.getElementById("demo").innerHTML = person.name + " is " + person["age"] + " years old."
     </script>
-
 
 </body>
 
