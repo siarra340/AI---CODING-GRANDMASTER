@@ -1,64 +1,37 @@
-<!--
-1) Start the HTML document with `<!DOCTYPE html>` and open `<html>`.
-
-2) Inside the `<body>`:
-   a) Add a paragraph explaining the task:
-      "Finding the largest number with help of Argument Objects"
-   b) Add an empty paragraph `<p id="result"></p>` to display the output.
-
-3) Add a `<script>` tag to write JavaScript.
-
-4) Create a function named `findMax()`:
-   a) This function will find the largest value from the `arguments` object.
-
-5) Inside `findMax()`:
-   a) Create a variable `i` for looping.
-   b) Create a variable `max` and set it to 0 (starting maximum).
-
-6) Use a `for` loop to go through all values in `arguments`:
-   a) Start from `i = 0`
-   b) Run while `i < arguments.length`
-   c) Increase `i` by 1 each time
-
-7) Inside the loop:
-   a) If `arguments[i] > max`, update `max` to that value.
-
-8) After the loop ends:
-   a) Return `max`.
-
-9) Call the function and display the result:
-   a) Use `document.getElementById("result").innerHTML`
-   b) Call `findMax(4, 5, 6)` and show the returned value.
-
-10) Close all tags properly.
--->
-
 <!DOCTYPE html>
 
 <html>
 
+
 <body>
 
-    <p>Finding the largest number with the use of Arugment Objects.</p>
-    <p id="result"></p>
+    <h1>Switches in JavaScript</h1>
+
+    <p id="demo"></p>
 
     <script>
-        function findmax() {
-            var i;
-            var max = 0;
-            for (i = 0; i < arguments.length; i++) {
-                if (arguments[i] > max) {
-                    max = arguments[i];
-                }
-            }
-
-            return max;
-
-
+        var day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "sunday"; break;
+            case 1:
+                day = "monday"; break;
+            case 2:
+                day = "tuesday"; break;
+            case 3:
+                day = "wenesday"; break;
+            case 4:
+                day = "thursday"; break;
+            case 5:
+                day = "Friday"; break;
+            case 6:
+                day = "saturday"; break;
         }
-
-        document.getElementById("result").innerHTML = findmax(5, 6, 7);
+        document.getElementById("demo").innerHTML = "Today is " + day;
     </script>
+
+
+
 
 </body>
 
