@@ -2,36 +2,28 @@
 
 <html>
 
-
 <body>
 
-    <h1>Switches in JavaScript</h1>
+    <h2>JavaScript Functions</h2>
+
+    <p>Do a calculation and then display the result.</p>
 
     <p id="demo"></p>
 
     <script>
-        var day;
-        switch (new Date().getDay()) {
-            case 0:
-                day = "sunday"; break;
-            case 1:
-                day = "monday"; break;
-            case 2:
-                day = "tuesday"; break;
-            case 3:
-                day = "wenesday"; break;
-            case 4:
-                day = "thursday"; break;
-            case 5:
-                day = "Friday"; break;
-            case 6:
-                day = "saturday"; break;
+
+        function add(a, b) {
+            return a + b;
         }
-        document.getElementById("demo").innerHTML = "Today is " + day;
+
+        function average(a, b) {
+            return add(a, b) / 2
+        }
+
+        let result = average(10, 20)
+        document.getElementById("demo").innerHTML = result
+
     </script>
-
-
-
 
 </body>
 
