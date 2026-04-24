@@ -2,19 +2,30 @@
 
 <html>
 
+
 <body>
 
-    <h2>JavaScript For Loop</h2>
-
-    <p id="demo"></p>
+    <h1>JavaScript String Methods</h1>
+    <p>Basic Methods</p>
 
     <script>
-        var person = {
-            name: "Siarra",
-            age: 14,
-        }
-        document.getElementById("demo").innerHTML = person.name + " is " + person["age"] + " years old."
+        var str = "AmAzInG"
+        document.write(str.toUpperCase());
+        document.write("<br>");
+        document.write(str.toLowerCase());
+        document.write("<br>");
+        document.write(str.startsWith('A'));
+
+        document.write("<br>");
+
+        var str = "I learnt about Methods";
+        var patt = new RegExp("food");
+        var res = patt.test(str);
+        document.write(res);
+
     </script>
+
+
 
 </body>
 
