@@ -2,31 +2,19 @@
 
 <html>
 
-
 <body>
 
-    <h1>JavaScript String Methods</h1>
-    <p>Basic Methods</p>
+    <h2>JavaScript Arrays</h2>
+
+    <p id="demo"></p>
+
 
     <script>
-        var str = "AmAzInG"
-        document.write(str.toUpperCase());
-        document.write("<br>");
-        document.write(str.toLowerCase());
-        document.write("<br>");
-        document.write(str.startsWith('A'));
-
-        document.write("<br>");
-
-        var str = "I learnt about Methods";
-        var patt = new RegExp("food");
-        var res = patt.test(str);
-        document.write(res);
-
+        var veg = ["Cucumber", "Carrot", "Celery"];
+        document.getElementById("demo").innerHTML = veg[0];
     </script>
 
 
 
-</body>
 
-</html>
+</body>
