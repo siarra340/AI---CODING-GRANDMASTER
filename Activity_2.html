@@ -1,64 +1,21 @@
-<!--
-1) Start the HTML document with `<html>`.
-
-2) Inside the `<head>` section:
-   a) Set the page title using `<title>JavaScript Math Object Methods</title>`.
-
-3) Inside the `<body>` section:
-   a) Add a `<script type="text/javascript">` tag to write JavaScript.
-
-4) Use Math object methods and store results in a variable named `value`:
-   a) Use `Math.abs(20)` to get the absolute value and print it using `document.write()`.
-   b) Add a line break using `"<br>"`.
-
-   c) Use `Math.acos(-1)` to get the arc cosine value and print it.
-   d) Add `"<br>"`.
-
-   e) Use `Math.asin(1)` to get the arc sine value and print it.
-   f) Add `"<br>"`.
-
-   g) Use `Math.atan(0.5)` to get the arc tangent value and print it.
-   h) Add `"<br>"`.
-
-5) For each output:
-   a) Print a label like "Demo Test Value : " followed by the calculated `value`.
-
-6) Close all tags properly:
-   a) Close `</script>`, `</body>`, and `</html>`.
--->
-
-
 <!DOCTYPE html>
 
 <html>
 
-<head>
-    <title>JavaScript Math Methods</title>
-</head>
-
 <body>
 
-    <h2>JavaScript Math Object Methods</h2>
+    <h2>JavaScript For Loop</h2>
 
-    <script type="text/javascript">
+    <p id="demo"></p>
 
-        var value = Math.abs(-9);
-        document.write("Result for the absolute value is: " + value + "<br>")
+    <script>
 
-        var value = Math.acos(1);
-        document.write("Demo1 Test value: " + value + "<br>")
-
-        var value = Math.asin(1);
-        document.write("The Result for Demo2 is " + value + "<br>")
-
-        var value = Math.atan(3);
-        document.write("The value for Demo3 is: " + value)
-
-
-
-
+        var food = ["Pizza", "Burger", "Noodles", "Ice cream", "Fried Rice"];
+        var text = "";
+        var i;
+        for (i = 0; i < food.length; i++) { text += food[i] + "</br>" }
+        document.getElementById("demo").innerHTML = text
     </script>
-
 
 
 </body>
