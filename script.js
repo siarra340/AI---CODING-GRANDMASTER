@@ -1,13 +1,39 @@
-var a = 8;
-var b = 10;
-var c = 10;
-var d = null;
-var e;
+function validate(e) {
+    e.preventDefualt();
+}
 
-document.write("a and b are equal: " + (a == b));
-document.write("<br>");
-document.write("b and c are equal: " + (b == c));
-document.write("<br>");
-document.write("The value of d is: " + d);
-document.write("<br>");
-document.write("The value of e is: " + e);
+const email = document.getElementById('email').value;
+const pass = document.getElementById('password').value;
+const age = document.getElementById('age').value;
+const msgBox = document.getElementById('message').value;
+
+let message = '';
+if (email === '') {
+    message = 'Please enter an email.';
+    msgBox.style.color = 'red';
+} else if (pass === '') {
+    message = 'Please enter a password.';
+    msgBox.style.color = 'red'
+} else if (age === '') {
+    message = 'Please enter your age';
+    msgBox.style.color = 'red'
+} else {
+    message = 'Login successful!';
+    msgBox.style.color = 'green'
+} msgBox.innerHTML = message;
+
+//This runs the validation when login is clicked
+document.getElementById("loginForm").onsubmit = validate;
+
+document.getElementById("email").oninput = () => validate({
+    preventDefault: () => { }
+});
+document.getElementById("password").oninput = () => validate({
+    preventDefault: () => { }
+});
+document.getElementById("age").oninput = () => validate({
+    preventDefault: () => { }
+});
+
+
+
