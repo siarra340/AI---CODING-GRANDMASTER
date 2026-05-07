@@ -1,12 +1,76 @@
+<!--
+1) Start the HTML document with `<!DOCTYPE html>` and open `<html>`.
+
+2) Inside the `<body>`:
+   a) Add a heading `<h2>` with text: "JavaScript Class".
+   b) Add a paragraph `<p>` with text: "How to use a JavaScript Class."
+
+3) Create two empty paragraphs to display output:
+   a) `<p id="student1"></p>` for first student details.
+   b) `<p id="student2"></p>` for second student details.
+
+4) Add a `<script>` tag to write JavaScript.
+
+5) Create a class named `Student`:
+   a) Add a `constructor(name, year)`:
+      - Store `name` using `this.name = name`
+      - Store `year` using `this.year = year`
+
+6) Add a method named `age()` inside the class:
+   a) Get the current year using:
+      `new Date().getFullYear()`
+   b) Return the age by subtracting birth year from current year:
+      `currentYear - this.year`
+
+7) Create objects using the class:
+   a) Create `student1` using `new Student("Riya", 2014)`
+   b) Create `student2` using `new Student("Tina", 2018)`
+
+8) Display student details on the webpage:
+   a) For `student1`, print name, birth year, and age inside `"student1"` element.
+   b) For `student2`, print name, birth year, and age inside `"student2"` element.
+   c) Use string concatenation with `+` and call `.age()` to get the age.
+
+9) Close all tags properly.
+-->
+
 <!DOCTYPE html>
 
 <html>
 
 <body>
 
-    <h1>Javascript Data types</h1>
+    <h2>JavaScript class</h2>
+    <p>How to use a Javascript class</p>
 
-    <script src="script.js"></script>
+    <p id="student1"></p>
+    <p id="student2"></p>
+    <p id="student3"></p>
+    <p id="student4"></p>
+
+    <script>
+
+        class student {
+
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+
+            age() {
+                let date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        const student1 = new student("Riya", 2014);
+        document.getElementById("student1").innerHTML = "The students name is " + student1.name + ". She was born in " + student1.year + " and her age is " + student1.age();
+
+        const student2 = new student("Tina", 2018);
+        document.getElementById("student2").innerHTML = "The students name is " + student2.name + ". She was born in " + student2.year + " and her age is " + student2.age();
+    </script>
+
+
 
 </body>
 
