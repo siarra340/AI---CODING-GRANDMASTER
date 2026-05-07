@@ -3,18 +3,16 @@
 <html>
 
 <body>
-
     <h2>JavaScript Class Inheritance</h2>
-    <p id="details"></p>
+    <p id="vechical"></p>
 
     <script>
-
         class Car {
             constructor(brand) {
-                this.Carname = brand;
+                this.carname = brand;
             }
             present() {
-                return "This cars brand is " + this.Carname;
+                return "The car brand is " + this.carname;
             }
         }
 
@@ -24,15 +22,12 @@
                 this.model = mod;
             }
             show() {
-                return this.present() + ", it is a " + this.model;
+                return this.present() + ', it is a ' + this.model;
             }
         }
 
-
-
-        let myCar = new model("Ford", "Mustang");
-        document.getElementById("details").innerHTML = myCar.show();
-
+        let myCar = new model("Audi", "Sedan");
+        document.getElementById("vechical").innerHTML = myCar.show();
     </script>
 </body>
 
