@@ -1,72 +1,27 @@
-<!--
-1) Add a heading `<h2>` with text: "JavaScript Class Static Methods".
-
-2) Add a paragraph explaining static methods:
-   a) A static method is created using the `static` keyword.
-   b) Static methods are called using the class name (not the object name).
-
-3) Create three empty paragraphs to display outputs:
-   a) `<p id="hello"></p>` for static hello() output
-   b) `<p id="hi"></p>` for object hi() output
-   c) `<p id="welcome"></p>` for static welcome() output
-
-4) Add a `<script>` tag to write JavaScript.
-
-5) Create a class named `Student`:
-   a) Add a constructor that takes `name` and stores it in `this.studentName`.
-
-6) Add static methods in the class:
-   a) `static hello()` returns a greeting like "Hello!!"
-   b) `static welcome(x)` returns "Welcome " + x.studentName
-      - This works because an object is passed as a parameter.
-
-7) Add a normal (non-static) method:
-   a) `hi()` returns "Hi " + this.studentName
-      - This must be called using an object.
-
-8) Create an object:
-   a) `myname = new Student("Carol")`
-
-9) Display outputs:
-   a) Call the static method using the class name:
-      `Student.hello()` → show it in `"hello"`
-   b) Call the normal method using the object:
-      `myname.hi()` → show it in `"hi"`
-   c) Call the static welcome method using the class name and pass the object:
-      `Student.welcome(myname)` → show it in `"welcome"`
--->
-
 <!DOCTYPE html>
-
 <html>
 
 <body>
-    <h2>JavaScript Class Static Methods</h2>
-    <p id="hello"></p>
-    <p id="hi"></p>
-    <p id="welcome"></p>
+    <p>Click the button to evaluate the JS expressions.</p>
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="result"></p>
 
     <script>
+        function myFunction() {
+            var x = 10;
+            var y = 20;
 
-        class Student {
-            constructor(name) {
-                this.studentName = name;
-            }
-            static hello() {
-                return "Hello!";
-            }
-            static welcome(x) {
-                return "Welcome " + x.studentName;
-            }
-            hi() {
-                return "Hi " + this.studentName;
-            }
+
+            var a = eval("x+y") + "<br>";
+            var b = eval("2*5") + "<br>";
+            var c = eval("y*x") + "<br>";
+
+            var res = a + b + c;
+            document.getElementById("result").innerHTML = res;
+
         }
 
-        myName = new Student("Carol");
-        document.getElementById("hello").innerHTML = Student.hello();
-        document.getElementById("hi").innerHTML = myName.hi();
-        document.getElementById("welcome").innerHTML = Student.welcome(myName)
     </script>
 </body>
 
