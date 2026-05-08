@@ -1,38 +1,19 @@
 <!DOCTYPE html>
-
 <html>
 
 <body>
-
-    <h2>JavaScript Class Inheritance</h2>
-    <p id="details"></p>
+    <p>This will help to multiply every element in the array by 10</p>
+    <p id="product_value"></p>
 
     <script>
-
-        class Car {
-            constructor(brand) {
-                this.Carname = brand;
-            }
-            present() {
-                return "This cars brand is " + this.Carname;
-            }
+        var numbers = [28, 6, 19, 95];
+        function myFunction(num) {
+            return num * 10;
         }
 
-        class model extends Car {
-            constructor(brand, mod) {
-                super(brand);
-                this.model = mod;
-            }
-            show() {
-                return this.present() + ", it is a " + this.model;
-            }
-        }
+        var newarray = numbers.map(myFunction);
 
-
-
-        let myCar = new model("Ford", "Mustang");
-        document.getElementById("details").innerHTML = myCar.show();
-
+        document.getElementById("product_value").innerHTML = newarray;
     </script>
 </body>
 
