@@ -1,66 +1,99 @@
 <!DOCTYPE html>
-
 <html>
-
-<head>
-    <title>Functions in JS</title>
-</head>
 
 <body>
 
+    <h2>Javascript Loops and Methods</h2>
 
-
-    <button type="button" onclick="mult7(7)">Execute JS Function </button>
-    <p id="mult"></p>
 
     <script>
-        function mult7(x, y) {
-            if (y === undefined) {
-                y = 3
-            }
-            document.getElementById('mult').innerHTML = x * y
-        }
+
+
+
+        var str = "COdInGaL";
+        document.write(str.toLocaleUpperCase());
+        document.write("<br>");
+        document.write(str.toLowerCase());
+        document.write("<br>");
+        document.write(str.startsWith("C"));
+        document.write("<br>");
+
+        var str1 = "Codingal is a learning platform for coding";
+        var patt = new RegExp("food");
+        var ans = patt.test(str1);
+        document.write(ans)
 
     </script>
 
-    <p style="color:rgb(76, 132, 193)">Varible Scope can be seprated into Global and Local</p>
+    <h2>Looping in JS</h2>
+    <p id="demo"></p>
+    <script>
 
-    <button type="button" onclick="myFunction()">Click the Button to Double 8 </button>
-    <p id="demo1"></p>
+        var veg = ["tomato", "cucumber", "carrot", "celery", "cabbage", "onion"];
+        var text = "";
+        var i;
+        for (i = 0; i < veg.length; i++) {
+            text += veg[i] + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = text;
+
+
+    </script>
+
+    <h2>Switch in JS</h2>
+
     <p id="demo2"></p>
 
     <script>
-        var a = 8;
 
-        function myFunction() {
+        var month;
+        switch (new Date().getMonth()) {
+            case 0:
+                month = "janurary";
+                break;
+            case 1:
+                month = "feburary";
+                break;
+            case 2:
+                month = "march";
+                break;
+            case 3:
+                month = "april";
+                break;
+            case 4:
+                month = "May";
+                break;
+            case 5:
+                month = "june";
+                break;
+            case 6:
+                month = "july";
+                break;
+            case 7:
+                month = "august";
+                break;
+            case 8:
+                month = "september";
+                break;
+            case 9:
+                month = "october";
+                break;
+            case 10:
+                month = "november";
+                break;
+            case 11:
+                month = "december";
 
-            var b = 2;
-            document.getElementById('demo1').innerHTML = a * b;
 
         }
 
-        document.getElementById('demo1').innerHTML = a
-        document.getElementById('demo2').innerHTML = b
+        document.getElementById("demo2").innerHTML = "The month is " + month;
+
     </script>
 
-    <center>
-
-        <h1 style="color:orange">Function Declaration</h1>
-
-
-        <script>
-            var answer = function (a, b) { return a * b };
-            document.write(answer(10, 2))
-
-        </script>
-
-    </center>
-
-
-
-
-
-
 </body>
+
+
 
 </html>
