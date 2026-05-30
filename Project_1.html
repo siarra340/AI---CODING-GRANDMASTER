@@ -1,98 +1,80 @@
 <!DOCTYPE html>
+
 <html>
 
 <body>
 
-    <h2>Javascript Loops and Methods</h2>
+    <h2>Javascript Objects and their Properties</h2>
+    <p>JS objects can be used to store a lot of different traits for a specific variable.</p>
+    <p>JS objects can be accessed by using <code>objectname.propertyname</code> or
+        <code>objectname["propertyname"]</code>
+    </p>
 
-
-    <script>
-
-
-
-        var str = "COdInGaL";
-        document.write(str.toLocaleUpperCase());
-        document.write("<br>");
-        document.write(str.toLowerCase());
-        document.write("<br>");
-        document.write(str.startsWith("C"));
-        document.write("<br>");
-
-        var str1 = "Codingal is a learning platform for coding";
-        var patt = new RegExp("food");
-        var ans = patt.test(str1);
-        document.write(ans)
-
-    </script>
-
-    <h2>Looping in JS</h2>
     <p id="demo"></p>
-    <script>
-
-        var veg = ["tomato", "cucumber", "carrot", "celery", "cabbage", "onion"];
-        var text = "";
-        var i;
-        for (i = 0; i < veg.length; i++) {
-            text += veg[i] + "<br>";
-        }
-
-        document.getElementById("demo").innerHTML = text;
-
-
-    </script>
-
-    <h2>Switch in JS</h2>
-
-    <p id="demo2"></p>
 
     <script>
 
-        var month;
-        switch (new Date().getMonth()) {
-            case 0:
-                month = "janurary";
-                break;
-            case 1:
-                month = "feburary";
-                break;
-            case 2:
-                month = "march";
-                break;
-            case 3:
-                month = "april";
-                break;
-            case 4:
-                month = "May";
-                break;
-            case 5:
-                month = "june";
-                break;
-            case 6:
-                month = "july";
-                break;
-            case 7:
-                month = "august";
-                break;
-            case 8:
-                month = "september";
-                break;
-            case 9:
-                month = "october";
-                break;
-            case 10:
-                month = "november";
-                break;
-            case 11:
-                month = "december";
+        var cat = {
+            breed: "ragdoll",
+            name: "Alice",
+            age: 20
+        };
 
-
-        }
-
-        document.getElementById("demo2").innerHTML = "The month is " + month;
+        document.getElementById("demo").innerHTML = "This cat is a " + cat.breed + " named " + cat["name"] + ". Alice's age is " + cat.age + " years old."
 
     </script>
+
+    <p>---------------------------------------------------------------------------------</p>
+
+    <h2>Built-in JS Objects</h2>
+
+    <script>
+
+        var value = Math.abs(50);
+        document.write("The abs value of 50 = " + value + "<br>");
+
+        var value = Math.acos(1);
+        document.write("The acos value of 1 = " + value + "<br>");
+
+        var value = Math.asin(1);
+        document.write("The asin value of 1 = " + value + "<br>");
+
+        var value = Math.atan(1);
+        document.write("The atan value of 1 = " + value);
+    </script>
+
+    <p>---------------------------------------------------------------------------------</p>
+    <h2>Arugument Objects in JS</h2>
+
+
+    <p id="results"></p>
+
+    <script>
+
+        function findMax() {
+            var i;
+            var max = 0;
+            for (i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+
+            }
+            return max;
+        }
+
+        document.getElementById("results").innerHTML = ("The biggest number in the set is ") + findMax(4, 5, 6);
+
+    </script>
+
+
+
+
+
 
 </body>
+
+
 
 
 
