@@ -1,79 +1,49 @@
 <!DOCTYPE html>
-
 <html>
 
 <body>
 
-    <h2>Javascript Objects and their Properties</h2>
-    <p>JS objects can be used to store a lot of different traits for a specific variable.</p>
-    <p>JS objects can be accessed by using <code>objectname.propertyname</code> or
-        <code>objectname["propertyname"]</code>
-    </p>
-
+    <h2>Arrays in JS</h2>
     <p id="demo"></p>
 
     <script>
 
-        var cat = {
-            breed: "ragdoll",
-            name: "Alice",
-            age: 20
-        };
-
-        document.getElementById("demo").innerHTML = "This cat is a " + cat.breed + " named " + cat["name"] + ". Alice's age is " + cat.age + " years old."
-
+        var animals = ["Cat", "dog", "Rat"];
+        document.getElementById("demo").innerHTML = "One animal that can be kept as home pets is a  " + animals[1]
     </script>
 
-    <p>---------------------------------------------------------------------------------</p>
+    <hr style="color:brown; border-top: 3px dotted;">
 
-    <h2>Built-in JS Objects</h2>
+    <h2>Methods in Arrays</h2>
+    <p id="join"></p>
+    <p id="pop1"></p>
+    <p id="pop2"></p>
 
     <script>
-
-        var value = Math.abs(50);
-        document.write("The abs value of 50 = " + value + "<br>");
-
-        var value = Math.acos(1);
-        document.write("The acos value of 1 = " + value + "<br>");
-
-        var value = Math.asin(1);
-        document.write("The asin value of 1 = " + value + "<br>");
-
-        var value = Math.atan(1);
-        document.write("The atan value of 1 = " + value);
+        var cars = ["Toyota", "Ford", "Honda", "BMW"];
+        document.getElementById("join").innerHTML = cars.join("=>")
+        document.getElementById("pop1").innerHTML = cars;
+        cars.pop()
+        document.getElementById("pop2").innerHTML = cars;
     </script>
 
-    <p>---------------------------------------------------------------------------------</p>
-    <h2>Arugument Objects in JS</h2>
-
-
-    <p id="results"></p>
+    <hr style="color:brown; border-top: 3px soild ;">
+    <h2>Call Stack in JS</h2>
+    <p>Do a calculation and return it:</p>
+    <p id="demo2"></p>
 
     <script>
-
-        function findMax() {
-            var i;
-            var max = 0;
-            for (i = 0; i < arguments.length; i++) {
-                if (arguments[i] > max) {
-                    max = arguments[i];
-                }
-
-            }
-            return max;
+        function divide(a, b) {
+            return a / b
         }
 
-        document.getElementById("results").innerHTML = "The biggest number in the set is " + findMax(4, 5, 6);
+        function percentage(a, b) {
+            return divide(a, b) * 100
+        }
 
+        let result = percentage(2, 10)
+        document.getElementById("demo2").innerHTML = "The percentage of 2/10 equals to " + result + "%"
     </script>
-
-
-
-
-
-
-</body>
-
 
 
 
