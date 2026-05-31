@@ -1,28 +1,36 @@
 <!DOCTYPE html>
+
 <html>
 
 <body>
-    <p>Click the button to evaluate the JS expressions.</p>
-    <button onclick="myFunction()">Try it</button>
 
-    <p id="result"></p>
+    <h2>JavaScript Functions: Old vs New</h2>
+
+    <p>Traditional Function Result: <span id="old"></span></p>
+
+
+
+
+    <p>Arrow Function Result: <span id="new"></span></p>
 
     <script>
-        function myFunction() {
-            var x = 10;
-            var y = 20;
 
-
-            var a = eval("x+y") + "<br>";
-            var b = eval("2*5") + "<br>";
-            var c = eval("y*x") + "<br>";
-
-            var res = a + b + c;
-            document.getElementById("result").innerHTML = res;
-
+        function old(a, b) {
+            return a + b
         }
 
+        document.getElementById("old").innerHTML = old(5, 7)
+
+        newAdd = (a, b) => a + b
+        document.getElementById("new").innerHTML = newAdd(7, 8)
+
+
+
+
+
+
     </script>
+
 </body>
 
 </html>
