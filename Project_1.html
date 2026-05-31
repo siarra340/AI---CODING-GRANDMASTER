@@ -3,49 +3,53 @@
 
 <body>
 
-    <h2>Arrays in JS</h2>
-    <p id="demo"></p>
+    <h2>Convert, Search and Replace in JS</h2>
+    <p id="number_value"></p>
+    <p id="string_value"></p>
 
     <script>
+        var x = 20
+        var y = 50
 
-        var animals = ["Cat", "dog", "Rat"];
-        document.getElementById("demo").innerHTML = "One animal that can be kept as home pets is a  " + animals[1]
+        document.getElementById("number_value").innerHTML = "The number value is " + (x + y)
+
+        document.getElementById("string_value").innerHTML = "The string value is " + String(x) + String(y)
+
+
     </script>
 
-    <hr style="color:brown; border-top: 3px dotted;">
+    <hr style="color:blue;">
 
-    <h2>Methods in Arrays</h2>
-    <p id="join"></p>
-    <p id="pop1"></p>
-    <p id="pop2"></p>
+    <h2>Error Handling in JS</h2>
+    <p id="error_result"></p>
 
     <script>
-        var cars = ["Toyota", "Ford", "Honda", "BMW"];
-        document.getElementById("join").innerHTML = cars.join("=>")
-        document.getElementById("pop1").innerHTML = cars;
-        cars.pop()
-        document.getElementById("pop2").innerHTML = cars;
-    </script>
 
-    <hr style="color:brown; border-top: 3px soild ;">
-    <h2>Call Stack in JS</h2>
-    <p>Do a calculation and return it:</p>
-    <p id="demo2"></p>
-
-    <script>
-        function divide(a, b) {
-            return a / b
+        try {
+            aconfirm("Read this message before starting");
+        }
+        catch (err) {
+            document.getElementById("error_result").innerHTML = "Ops! You have done a mistake: " + "<br>" + err.message
         }
 
-        function percentage(a, b) {
-            return divide(a, b) * 100
-        }
+    </script>
 
-        let result = percentage(2, 10)
-        document.getElementById("demo2").innerHTML = "The percentage of 2/10 equals to " + result + "%"
+    <hr style="color:blue;">
+    <h2>JS Arrow Function</h2>
+    <p id="result"></p>
+
+    <script>
+        const divide = (a, b) => (a / b)
+        document.getElementById("result").innerHTML = divide(10, 2)
     </script>
 
 
 
+
+
+
+
+
+</body>
 
 </html>
