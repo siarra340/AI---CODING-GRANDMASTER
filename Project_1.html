@@ -1,54 +1,97 @@
 <!DOCTYPE html>
 <html>
 
+<title>School Event Data Viewer</title>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #e1eafb;
+        color: black;
+        text-align: center;
+    }
+
+    .event-card {
+        width: 520px;
+        background-color: white;
+        border: 2px solid #3b82f6;
+        margin: 40px auto;
+        padding: 20px;
+        box-shadow: 0 0 18px #93c5fd;
+    }
+
+    h1 {
+        color: #1d4ed8;
+    }
+
+    button {
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 24px;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: bold;
+
+    }
+
+    button:hover {
+        background-color: #1e40af;
+    }
+
+    .info-box {
+        background-color: #eff6ff;
+        border: 2px dashed #60a5fa;
+        border-radius: 12px;
+        padding: 15px;
+        text-align: left;
+        line-height: 1.7;
+        margin-top: 18px;
+
+    }
+
+    #status {
+        color: #16a34a;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    #jsonOutput {
+        color: #9d4edd;
+        word-wrap: break-word;
+        font-size: 14px;
+
+
+    }
+</style>
+
 <body>
 
-    <h2>Convert, Search and Replace in JS</h2>
-    <p id="number_value"></p>
-    <p id="string_value"></p>
+    <div class="event-card">
 
-    <script>
-        var x = 20
-        var y = 50
+        <h1>School Event Data Viewer</h1>
 
-        document.getElementById("number_value").innerHTML = "The number value is " + (x + y)
+        <p>Click the button to get the school event data using JSON and asynchronous JavaScript. </p>
 
-        document.getElementById("string_value").innerHTML = "The string value is " + String(x) + String(y)
+        <button onclick="showSchoolEvent()">Load Event Information</button>
 
+        <div class="info-box">
+            <h2>Loading Status</h2>
+            <p id="status">Waiting to load event data....</p>
+        </div>
 
-    </script>
+        <div class="info-box">
+            <h2>Event Details</h2>
+            <p id="eventDetails"></p>
+        </div>
 
-    <hr style="color:blue;">
+        <div class="info-box">
+            <h2>JSON Text Output</h2>
+            <p id="jsonOutput"></p>
+        </div>
 
-    <h2>Error Handling in JS</h2>
-    <p id="error_result"></p>
-
-    <script>
-
-        try {
-            aconfirm("Read this message before starting");
-        }
-        catch (err) {
-            document.getElementById("error_result").innerHTML = "Ops! You have done a mistake: " + "<br>" + err.message
-        }
-
-    </script>
-
-    <hr style="color:blue;">
-    <h2>JS Arrow Function</h2>
-    <p id="result"></p>
-
-    <script>
-        const divide = (a, b) => (a / b)
-        document.getElementById("result").innerHTML = divide(10, 2)
-    </script>
-
-
-
-
-
-
-
+        <script src="script1.js"></script>
 
 </body>
 
