@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Deliver Tracker</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ebfafb;
+            text-align: center;
+            padding: 15px;
+        }
+
+        h1 {
+            color: #f4a261
+        }
+
+        button {
+            background: #f4a261;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 20px;
+            font-size: 15px;
+
+        }
+
+        div {
+            border: 2px solid #faa307;
+            width: 300px;
+            margin: 6px auto;
+            padding: 8px 10px;
+            text-align: left;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Pizza Delivery Tracker</h1>
+    <button onclick="saveOrder()">Save Order</button>
+    <button onclick="startDelivery()">Start Delivery</button>
+
+    <div>JSON Text: <span id="json-text"></span></div>
+    <div>Loaded Item: <span id="loaded-item"></span></div>
+    <div>Loaded Price: <span id="loaded-price"></span></div>
+    <div>Pizza Shop : <span id="pizza-shop"></span></div>
+    <div>Status: <span id="status"></span></div>
+    <div>Result: <span id="result"></span></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
