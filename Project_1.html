@@ -1,97 +1,145 @@
 <!DOCTYPE html>
 <html>
 
-<title>School Event Data Viewer</title>
+<head>
+    <title>My Digital Zoo Manager</title>
 
-<style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #e1eafb;
-        color: black;
-        text-align: center;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            text-align: center;
+            color: #222222;
+        }
 
-    .event-card {
-        width: 520px;
-        background-color: white;
-        border: 2px solid #3b82f6;
-        margin: 40px auto;
-        padding: 20px;
-        box-shadow: 0 0 18px #93c5fd;
-    }
+        h1 {
+            color: darkgreen;
+        }
 
-    h1 {
-        color: #1d4ed8;
-    }
+        #zoo {
+            width: 420px;
+            border: 3px solid darkgreen;
+            border-radius: 12px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 15px;
+        }
 
-    button {
-        background-color: #2563eb;
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 12px 24px;
-        font-size: 15px;
-        cursor: pointer;
-        font-weight: bold;
+        .zone {
+            border: 2px solid seagreen;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 12px;
+            background-color: #f0fff0;
+            text-align: left;
+        }
 
-    }
+        .animal {
+            font-weight: bold;
+            color: darkorange;
+        }
 
-    button:hover {
-        background-color: #1e40af;
-    }
+        button {
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 22px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+        }
 
-    .info-box {
-        background-color: #eff6ff;
-        border: 2px dashed #60a5fa;
-        border-radius: 12px;
-        padding: 15px;
-        text-align: left;
-        line-height: 1.7;
-        margin-top: 18px;
+        #output {
+            width: 420px;
+            border: 2px dashed darkgreen;
+            border-radius: 10px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 12px;
+            text-align: left;
+        }
+    </style>
 
-    }
-
-    #status {
-        color: #16a34a;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    #jsonOutput {
-        color: #9d4edd;
-        word-wrap: break-word;
-        font-size: 14px;
-
-
-    }
-</style>
+</head>
 
 <body>
 
-    <div class="event-card">
+    <h1>My Digital Zoo Manager</h1>
+    <p>Use JavaScript and the DOM to explore animals, zones, parent nodes, child nodes and sibling nodes.</p>
 
-        <h1>School Event Data Viewer</h1>
+    <div id="zoo">
 
-        <p>Click the button to get the school event data using JSON and asynchronous JavaScript. </p>
+        <div class="zone" id="lionZone">
+            <h2>Lion Zone</h2>
+            <p>Animal: <span class="animal">Lion</span></p>
 
-        <button onclick="showSchoolEvent()">Load Event Information</button>
-
-        <div class="info-box">
-            <h2>Loading Status</h2>
-            <p id="status">Waiting to load event data....</p>
         </div>
 
-        <div class="info-box">
-            <h2>Event Details</h2>
-            <p id="eventDetails"></p>
+        <div class="zone" id="elephantZone">
+            <h2>Elephant Zone</h2>
+            <p>Animal: <span class="animal">Elephant</span></p>
+
         </div>
 
-        <div class="info-box">
-            <h2>JSON Text Output</h2>
-            <p id="jsonOutput"></p>
+        <div class="zone" id="pandaZone">
+            <h2>Panda Zone</h2>
+            <p>Animal: <span class=animal>Panda</span></p>
         </div>
 
-        <script src="script1.js"></script>
+    </div>
+
+    <button onclick="manageZoo()">Manage Zoo</button>
+
+    <div id="output">Zoo information will appear here.</div>
+
+    <script>
+        function manageZoo() {
+            let zoo = document.getElementById("zoo");
+            let lionZone = document.getElementById("lionZone");
+            let elephantZone = document.getElementById("elephantZone");
+            let pandaZone = document.getElementById("pandaZone");
+            let output = document.getElementById("output");
+
+            let parentNodeName = lionZone.parentNode.id;
+
+            let firstChildZone = zoo.children[0].id;
+            let secondChildZone = zoo.children[1].id;
+            let nextSiblingZone = lionZone.nextElementSibling.id;
+            let previousSiblingZone = pandaZone.previousElementSibling.id;
+
+            let elementNodeType = lionZone.nodeType;
+            let textNodeType = lionZone.firstChild.nodeType;
+
+            lionZone.style.backgroundColor = "#fff3cd";
+            elephantZone.style.backgroundColor = "#d1ecf1";
+            pandaZone.style.backgroundColor = "#f8d7da";
+
+            lionZone.querySelector("h2").innerHTML = "Updated Lion Zone";
+            elephantZone.querySelector("h2").innerHTML = "Updated Elephant Zone";
+            pandaZone.querySelector("h2").innerHTML = "Updated Panda Zone";
+
+            output.innerHTML = "<strong>DOM Tree Information: </strong> <br>" +
+                "Parent of Lion Zone: " + parentNodeName + "<br>" +
+                "First child of Zoo: " + firstChildZone + "<br>" +
+                "Second Child of Zoo: " + secondChildZone + "<br><br>" +
+                "<strong>Sibling Node Information: </strong> <br>" +
+                "Next Sibling Node of Lion Zone: " + nextSiblingZone + "<br>" +
+                "Previous Sibling Node of Panda Zone: " + previousSiblingZone + "<br><br>" +
+
+                "<strong>Types of Nodes: </strong><br>" +
+                "Lion Zone Element Node Type: " + elementNodeType + "<br>" +
+                "Lion Zone First Child Node Type: " + textNodeType + "<br><br>" +
+
+                "<strong>DOM Update: </strong><br>" +
+                "The animal zone headings and background colors were updated using JavaScript";
+
+        }
+    </script>
+
+
+
+
 
 </body>
 
