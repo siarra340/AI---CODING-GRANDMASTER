@@ -1,146 +1,195 @@
 <!DOCTYPE html>
-<html>
+<htm>
 
-<head>
-    <title>My Digital Zoo Manager</title>
+    <head>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: aliceblue;
-            text-align: center;
-            color: #222222;
-        }
+        <title>My Exam Countdown Checker</title>
 
-        h1 {
-            color: darkgreen;
-        }
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(to right, #D1913C, #FFD194);
+                color: #3b2f2f;
+                text-align: center;
+            }
 
-        #zoo {
-            width: 420px;
-            border: 3px solid darkgreen;
-            border-radius: 12px;
-            background-color: white;
-            margin: 20px auto;
-            padding: 15px;
-        }
+            .exam-card {
+                width: 520px;
+                background-color: white;
+                border: 4px solid #ff6f91;
+                border-radius: 20px;
+                margin: 40px auto;
+                padding: 25px;
+                box-shadow: 0 0 20px #ff8fab;
+            }
 
-        .zone {
-            border: 2px solid seagreen;
-            border-radius: 8px;
-            margin: 10px;
-            padding: 12px;
-            background-color: #f0fff0;
-            text-align: left;
-        }
+            h1 {
+                color: #ff477e;
+                font-size: 25px;
+            }
 
-        .animal {
-            font-weight: bold;
-            color: darkorange;
-        }
+            .emoji {
+                font-size: 40px;
+            }
 
-        button {
-            background-color: darkgreen;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 22px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 15px;
-        }
+            .info-box {
+                background-color: #fff0f5;
+                border: 2px dashed #ff6f91;
+                border-radius: 12px;
+                padding: 15px;
+                margin-top: 15px;
+                text-align: left;
+            }
 
-        #output {
-            width: 420px;
-            border: 2px dashed darkgreen;
-            border-radius: 10px;
-            background-color: #ffffff;
-            margin: 20px auto;
-            padding: 12px;
-            text-align: left;
-        }
-    </style>
+            button {
+                background-color: #ff477e;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                padding: 12px 25px;
+                font-size: 18px;
+                cursor: pointer;
+                font-weight: bold;
+            }
 
-</head>
+            button:hover {
+                background-color: #d6336c;
+            }
 
-<body>
+            #daysBox {
+                font-size: 42px;
+                font-weight: bold;
+                color: #7209b7;
+            }
 
-    <h1>My Digital Zoo Manager</h1>
-    <p>Use JavaScript and the DOM to explore animals, zones, parent nodes, child nodes and sibling nodes.</p>
+            #result {
+                font-size: 17px;
+                line-height: 1.6;
+            }
 
-    <div id="zoo">
+            #countdown {
+                color: #ff477e;
+                font-weight: bold;
+                line-height: 1.6;
+            }
+        </style>
 
-        <div class="zone" id="lionZone">
-            <h2>Lion Zone</h2>
-            <p>Animal: <span class="animal">Lion</span></p>
+    </head>
+
+    <body>
+
+        <div class="exam-card">
+
+            <div class="emoji">Exam Time</div>
+            <h1>My Exam Countdown Checker</h1>
+
+            <!-- The date picking section -->
+
+            <p>Pick your exam date to check the countdown <b>(Make sure to choose a date that is in advance from today
+                    and within this year).</b></p>
+            <label for="monthInput">
+                Month:
+            </label>
+            <select id="monthInput">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+
+            </select>
+
+            <label for="dateInput">Date: </label>
+            <input type="number" id="dateInput" min="1" max="31" value="15">
+            <!-- The end of the section -->
+
+            <br>
+            <p>Click the button to check how many days are left until the exam.</p>
+
+            <button onclick="checkExam()">Check Exam Countdown</button>
+
+            <h2>Days Left</h2>
+            <div id="daysBox">?</div>
+
+            <div class="info-box">
+
+                <h2>Exam Date Results</h2>
+                <p id="result"></p>
+            </div>
+
+            <div class="info-box">
+                <h2>Countdown Review</h2>
+                <p id="countdown"></p>
+            </div>
 
         </div>
 
-        <div class="zone" id="elephantZone">
-            <h2>Elephant Zone</h2>
-            <p>Animal: <span class="animal">Elephant</span></p>
+        <script>
 
-        </div>
+            function checkExam() {
+                let examMaterial = null;
+                let studyPrep;
 
-        <div class="zone" id="pandaZone">
-            <h2>Panda Zone</h2>
-            <p>Animal: <span class=animal>Panda</span></p>
-        </div>
+                const studentName = "Siarra";
+                const examMonth = Number(document.getElementById("monthInput").value)
+                const examDate = Number(document.getElementById("dateInput").value)
 
-    </div>
+                let message = "";
+                let countdownText = "";
 
-    <button onclick="manageZoo()">Manage Zoo</button>
-
-    <div id="output">Zoo information will appear here.</div>
-
-    <script>
-        function manageZoo() {
-            let zoo = document.getElementById("zoo");
-            let lionZone = document.getElementById("lionZone");
-            let elephantZone = document.getElementById("elephantZone");
-            let pandaZone = document.getElementById("pandaZone");
-            let output = document.getElementById("output");
-
-            let parentNodeName = lionZone.parentNode.id;
-
-            let firstChildZone = zoo.children[0].id;
-            let secondChildZone = zoo.children[1].id;
-            let nextSiblingZone = lionZone.nextElementSibling.id;
-            let previousSiblingZone = pandaZone.previousElementSibling.id;
-
-            let elementNodeType = lionZone.nodeType;
-            let textNodeType = lionZone.firstChild.nodeType;
-
-            lionZone.style.backgroundColor = "#fff3cd";
-            elephantZone.style.backgroundColor = "#d1ecf1";
-            pandaZone.style.backgroundColor = "#f8d7da";
-
-            lionZone.querySelector("h2").innerHTML = "Updated Lion Zone";
-            elephantZone.querySelector("h2").innerHTML = "Updated Elephant Zone";
-            pandaZone.querySelector("h2").innerHTML = "Updated Panda Zone";
-
-            output.innerHTML = "<strong>DOM Tree Information: </strong> <br>" +
-                "Parent of Lion Zone: " + parentNodeName + "<br>" +
-                "First child of Zoo: " + firstChildZone + "<br>" +
-                "Second Child of Zoo: " + secondChildZone + "<br><br>" +
-                "<strong>Sibling Node Information: </strong> <br>" +
-                "Next Sibling Node of Lion Zone: " + nextSiblingZone + "<br>" +
-                "Previous Sibling Node of Panda Zone: " + previousSiblingZone + "<br><br>" +
-
-                "<strong>Types of Nodes: </strong><br>" +
-                "Lion Zone Element Node Type: " + elementNodeType + "<br>" +
-                "Lion Zone First Child Node Type: " + textNodeType + "<br><br>" +
-
-                "<strong>DOM Update: </strong><br>" +
-                "The animal zone headings and background colors were updated using JavaScript";
-
-        }
-    </script>
+                let today = new Date();
+                today.setHours(0, 0, 0, 0)
+                let currentYear = today.getFullYear();
+                let examTarget = new Date(currentYear, examMonth - 1, examDate);
 
 
 
+                let timeDifference = examTarget - today;
+                let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+                if (daysLeft <= 7 && daysLeft > 0) {
+                    alert("Warning: There are only " + daysLeft + " days left until you exam! Studying hard " + studentName + "!")
+                }
+
+                if (daysLeft === 0) {
+                    message = "It is exam day, " + studentName + "! Be confident and do well!";
+                } else if (daysLeft <= 7) {
+                    message = "The exam is almost here, " + studentName + "! Keep revising!"
+                } else {
+                    message = "Keep studying, " + studentName + "! You still have time!"
+                }
+
+                let finalMessage = "Student Name: " + studentName + "<br>";
+                finalMessage = finalMessage
+                    + "Today's Date: " + today.toDateString() + "<br>";
+                finalMessage = finalMessage + "Exam Date: " + examTarget.toDateString() + "<br>";
+                finalMessage = finalMessage + "Message: " + message + "<br><br>";
+                finalMessage = finalMessage + "Exam Material: " + examMaterial + "<br>";
+                finalMessage = finalMessage + "Study Preperation: " + studyPrep;
+
+                document.getElementById("daysBox").innerHTML = daysLeft;
+                document.getElementById("result").innerHTML = finalMessage
+
+                let day = 1;
+                while (day <= 5) {
+                    countdownText = countdownText + "Countdown Check " + day;
+                    countdownText = countdownText + ": Academic focus loading...<br>"; day++;
+                }
+
+                document.getElementById("countdown").innerHTML = countdownText;
+
+            }
+        </script>
 
 
-</body>
 
-</html>
+    </body>
+
+    </html>
