@@ -1,39 +1,51 @@
-function validate(e) {
-    e.preventDefualt();
+class Superhero {
+    constructor(name, power, mission) {
+        this.name = name;
+        this.power = power;
+        this.mission = mission;
+    }
+
+
+describeHero(){
+    return "<div class= 'hero-card'>" +
+    "<p class= 'hero-name'>"+ 
+    this.name + "</p>" +
+    "<p class= 'hero-power'>"+ "Power: "+
+    this.power + "</p>" +
+    "<p class= 'hero-mission'>" + "Misson: " + this.mission + "</p>" + 
+   
+    "</div>"
+    }
 }
 
-const email = document.getElementById('email').value;
-const pass = document.getElementById('password').value;
-const age = document.getElementById('age').value;
-const msgBox = document.getElementById('message').value;
+function showHeroes(){
+    let hero1 = new Superhero(
+        "Captain Code",
+        "Debugging errors",
+        "Fix broken programs and save the coding world."
+    );
 
-let message = '';
-if (email === '') {
-    message = 'Please enter an email.';
-    msgBox.style.color = 'red';
-} else if (pass === '') {
-    message = 'Please enter a password.';
-    msgBox.style.color = 'red'
-} else if (age === '') {
-    message = 'Please enter your age';
-    msgBox.style.color = 'red'
-} else {
-    message = 'Login successful!';
-    msgBox.style.color = 'green'
-} msgBox.innerHTML = message;
+    let hero2= new Superhero(
+        "Pixel Flash",
+        "Super speed desgin",
+        "Build colourful websites in seconds."
+    );
 
-//This runs the validation when login is clicked
-document.getElementById("loginForm").onsubmit = validate;
+    let hero3= new Superhero(
+        "Logic Girl",
+        "Smart problem-solving",
+        "Use logic to solve tricky challanges"
+    );
 
-document.getElementById("email").oninput = () => validate({
-    preventDefault: () => { }
-});
-document.getElementById("password").oninput = () => validate({
-    preventDefault: () => { }
-});
-document.getElementById("age").oninput = () => validate({
-    preventDefault: () => { }
-});
+    let hero4= new Superhero(
+        "Data Knight",
+        "Data protection",
+        "Keep inmportant information safe."
+    );
 
-
-
+    document.getElementById("heroCards").innerHTML=
+    hero1.describeHero()+
+    hero2.describeHero()+
+    hero3.describeHero()+
+    hero4.describeHero();
+}
