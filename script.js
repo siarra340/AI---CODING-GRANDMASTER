@@ -1,51 +1,40 @@
-class Superhero {
-    constructor(name, power, mission) {
-        this.name = name;
-        this.power = power;
-        this.mission = mission;
-    }
+var tasks = ["Homework", "Breakfast", "Exersise", "Reading", "Packing Bag"];
 
+var minutes = [30, 15, 20, 25, 10];
 
-describeHero(){
-    return "<div class= 'hero-card'>" +
-    "<p class= 'hero-name'>"+ 
-    this.name + "</p>" +
-    "<p class= 'hero-power'>"+ "Power: "+
-    this.power + "</p>" +
-    "<p class= 'hero-mission'>" + "Misson: " + this.mission + "</p>" + 
-   
-    "</div>"
-    }
+document.getElementById("taskResult").innerHTML = "Tasks: " + tasks;
+
+document.getElementById("timeResult").innerHTML = "Minutes needed: " + minutes;
+
+document.getElementById("labelResult").innerHTML = "Press the Button above!";
+
+function sortAZ() {
+    var sortTasks = tasks.sort();
+    document.getElementById("taskResult").innerHTML = "A to Z: " + sortTasks;
 }
 
-function showHeroes(){
-    let hero1 = new Superhero(
-        "Captain Code",
-        "Debugging errors",
-        "Fix broken programs and save the coding world."
-    );
+function sortZA() {
 
-    let hero2= new Superhero(
-        "Pixel Flash",
-        "Super speed desgin",
-        "Build colourful websites in seconds."
-    );
+    var reversedTasks = [...tasks].sort().reverse();
 
-    let hero3= new Superhero(
-        "Logic Girl",
-        "Smart problem-solving",
-        "Use logic to solve tricky challanges"
-    );
-
-    let hero4= new Superhero(
-        "Data Knight",
-        "Data protection",
-        "Keep inmportant information safe."
-    );
-
-    document.getElementById("heroCards").innerHTML=
-    hero1.describeHero()+
-    hero2.describeHero()+
-    hero3.describeHero()+
-    hero4.describeHero();
+    document.getElementById("taskResult").innerHTML = "Z to A: " + reversedTasks;
 }
+
+function sortShortest() {
+    minutes.sort(function (a, b) { return a - b; });
+
+    document.getElementById("timeResult").innerHTML = "Shortest tasks first: " + minutes;
+}
+
+function sortLongest() {
+    minutes.sort(function (a, b) { return b - a; })
+
+    document.getElementById("timeResult").innerHTML = "Longest tasks first: " + minutes;
+}
+
+function addLabel() {
+    var labelledMinutues = minutes.map(function (time) { return time + " mintues"; });
+
+    document.getElementById("labelResult").innerHTML = "Labelled times: " + labelledMinutues
+}
+
