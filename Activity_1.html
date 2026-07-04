@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-
 <html>
+
+<head>
+    <title>A Simple Calculator</title>
+</head>
 
 <body>
 
-    <h2>The JavaScript String() Method</h2>
+    <div class="container">
+        <div id="calculator">
+            <div id="keyboard">
 
-    <p>The String() method can convert a number to a string.</p>
+                <button class="operator" id="clear">C</button>
+                <button class="operator" id="backspace">CE</button>
+                <button class="operator" id="%">%</button>
+                <button class="operator" id="/">/</button>
+                <button class="operator" id="/">÷</button>
+                <button class="number" id="7">7</button>
+                <button class="number" id="8">8</button>
+                <button class="number" id="9">9</button>
+                <button class="operator" id="*">*</button>
+                <button class="number" id="4">4</button>
+                <button class="number" id="5">5</button>
+                <button class="number" id="6">6</button>
+                <button class="operator" id="-">-</button>
+                <button class="number" id="1">1</button>
+                <button class="number" id="2">2</button>
+                <button class="number" id="3">3</button>
+                <button class="operator" id="+">+</button>
+                <button class="empty" id="empty"></button>
+                <button class="number" id="0">0</button>
+                <button class="empty" id="empty"></button>
+                <button class="operator" id="=">=</button>
 
-    <p id="number_result"></p>
-
-    <p id="string_result"></p>
-
-    <script>
-
-        var num = 50
-        var num2 = 10
-
-        document.getElementById("number_result").innerHTML = num + num2
-
-        document.getElementById("string_result").innerHTML = String(num) + String(num2)
 
 
 
+            </div>
 
-    </script>
+        </div>
+
+    </div>
 
 </body>
+
+
+
 
 </html>
