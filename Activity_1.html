@@ -1,49 +1,65 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <title>A Simple Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: aliceblue;
+            text-align: center;
+            padding: 30px;
+
+        }
+
+        h1 {
+            color: navy;
+
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            border: 2px solid navy;
+            border-radius: 6px;
+            width: 220px;
+        }
+
+        button {
+            background: navy;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #timer {
+            color: grey;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <div class="container">
-        <div id="calculator">
-            <div id="keyboard">
+    <h1>Lucky Draw</h1>
+    <p>Enter your name and guess a number to win!</p>
 
-                <button class="operator" id="clear">C</button>
-                <button class="operator" id="backspace">CE</button>
-                <button class="operator" id="%">%</button>
-                <button class="operator" id="/">/</button>
-                <button class="operator" id="/">÷</button>
-                <button class="number" id="7">7</button>
-                <button class="number" id="8">8</button>
-                <button class="number" id="9">9</button>
-                <button class="operator" id="*">*</button>
-                <button class="number" id="4">4</button>
-                <button class="number" id="5">5</button>
-                <button class="number" id="6">6</button>
-                <button class="operator" id="-">-</button>
-                <button class="number" id="1">1</button>
-                <button class="number" id="2">2</button>
-                <button class="number" id="3">3</button>
-                <button class="operator" id="+">+</button>
-                <button class="empty" id="empty"></button>
-                <button class="number" id="0">0</button>
-                <button class="empty" id="empty"></button>
-                <button class="operator" id="=">=</button>
+    <input type="text" id="name" placeholder="Your name" required><br>
+    <p id="msg-name"></p>
 
+    <input type="number" id="guess" placeholder="Guess a number (1 to 5)" min="1" max="5" required><br>
+    <p id="msg-guess"></p>
 
+    <button onclick="checkForm()">Try by clicking!</button>
+    <p id="result"></p>
+    <p id="timer"></p>
 
-
-            </div>
-
-        </div>
-
-    </div>
+    <script src="script.js"></script>
 
 </body>
-
 
 
 

@@ -1,40 +1,43 @@
-var tasks = ["Homework", "Breakfast", "Exersise", "Reading", "Packing Bag"];
+var seconds = 0;
+setInterval(function () {
+    seconds = seconds + 1;
+    document.getElementById("timer").textContent = "You have been here for " + seconds + " seconds!"
+}, 1000);
 
-var minutes = [30, 15, 20, 25, 10];
+function checkForm() {
+    var name = document.getElementById("name").value;
+    var guess = document.getElementById("guess").value;
+    var ok = true;
 
-document.getElementById("taskResult").innerHTML = "Tasks: " + tasks;
+    if (name == "") {
+        document.getElementById("msg-name").textContent = "Please enter your name!";
+        document.getElementById("msg-name").style.color = "red";
+        ok = false;
 
-document.getElementById("timeResult").innerHTML = "Minutes needed: " + minutes;
+    } else {
+        document.getElementById("msg-name").textContent = "Great name!";
+        document.getElementById("msg-name").style.color = "Green";
+    }
 
-document.getElementById("labelResult").innerHTML = "Press the Button above!";
+    if (guess == "") {
+        document.getElementById("msg-guess").textContent = "Please enter a guess!";
 
-function sortAZ() {
-    var sortTasks = tasks.sort();
-    document.getElementById("taskResult").innerHTML = "A to Z: " + sortTasks;
+        document.getElementById("msg-guess").style.color = "Red";
+        ok = false;
+    } else {
+        document.getElementById("msg-guess").textContent = "Guess saved!";
+        document.getElementById("msg-guess").style.color = "Green";
+    }
+
+    if (ok == true) {
+        var lucky = Math.floor(Math.random() * 5) + 1;
+        if (guess == lucky) {
+            document.getElementById("result").textContent = "You win, " + "name" + "! The lucky number was " + lucky + "!";
+            document.getElementById("result").style.color = "Green";
+        } else {
+            document.getElementById("result").textContent = "So close, " + name + "! The lucky number was " + lucky + ". Try again!";
+            document.getElementById("result").style.color = "navy";
+        }
+    }
+
 }
-
-function sortZA() {
-
-    var reversedTasks = [...tasks].sort().reverse();
-
-    document.getElementById("taskResult").innerHTML = "Z to A: " + reversedTasks;
-}
-
-function sortShortest() {
-    minutes.sort(function (a, b) { return a - b; });
-
-    document.getElementById("timeResult").innerHTML = "Shortest tasks first: " + minutes;
-}
-
-function sortLongest() {
-    minutes.sort(function (a, b) { return b - a; })
-
-    document.getElementById("timeResult").innerHTML = "Longest tasks first: " + minutes;
-}
-
-function addLabel() {
-    var labelledMinutues = minutes.map(function (time) { return time + " mintues"; });
-
-    document.getElementById("labelResult").innerHTML = "Labelled times: " + labelledMinutues
-}
-
