@@ -1,66 +1,69 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: aliceblue;
-            text-align: center;
-            padding: 30px;
+    <meta charset="UTF-8" />
+    <meta name="veiwport" content="width=device-width, intial-scale=1.0" />
 
-        }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
 
-        h1 {
-            color: navy;
+    <link rel="stylesheet" href="style_1.css" />
 
-        }
+    <script src="https://kit.fontawesome.com/1270e59310.js" crossorigin="anonymous"></script>
 
-        input {
-            padding: 8px;
-            margin: 5px;
-            border: 2px solid navy;
-            border-radius: 6px;
-            width: 220px;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Roboto+Slab:wght@200;400;600;900&display=swap"
+        rel="stylesheet" />
 
-        button {
-            background: navy;
-            color: white;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        #timer {
-            color: grey;
-        }
-    </style>
-
+    <title>Portfolio</title>
 </head>
 
 <body>
 
-    <h1>Lucky Draw</h1>
-    <p>Enter your name and guess a number to win!</p>
+    <div class="container-fluid navigation pt-3">
 
-    <input type="text" id="name" placeholder="Your name" required><br>
-    <p id="msg-name"></p>
+        <div class="row">
 
-    <input type="number" id="guess" placeholder="Guess a number (1 to 5)" min="1" max="5" required><br>
-    <p id="msg-guess"></p>
+            <div class="col-6 d-flex justify-content-end align-items-center">
 
-    <button onclick="checkForm()">Try by clicking!</button>
-    <p id="result"></p>
-    <p id="timer"></p>
 
-    <script src="script.js"></script>
+
+                <i class="fa-solid fa-code text-warning"></i>
+
+                <h5 class="d-inline pl-2 text-white">CODINGAL</h5>
+            </div>
+
+            <div class="col-6 pt-2">
+
+                <div class="row text-center p-0 d-flex justify-content-end align-items-center">
+
+                    <div class="col-3">
+                        <a href="#about" class="text-white navigation-link">Projects</a>
+                    </div>
+
+                    <div class="col-3">
+                        <a href="#projects" class="text-white navigation-link>Projects"></a>
+                    </div>
+
+                    <div class="col-3">
+                        <a href="#social-media" class="text-white navigation-link">Social Media</a>
+                    </div>
+
+                    <div class="col-3">
+                        <a href="https://packetcode.github.io/web-development-crash-course/resume-mini-project/"
+                            target="_blank" class="text-white navigation-link">Resume</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
-
 
 
 </html>
