@@ -1,70 +1,55 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: black;
+    margin: 0;
+    font-family: "Baloo Tamma 2", sans-serif;
+    background: #252525;
 }
 
-#container {
-    width: 1000px;
-    height: 550px;
-    background-image: linear-gradient (rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('shapes.avif');
-    background-size: cover;
-    background-position: center;
-
-    margin: 20px auto;
-
-}
-
-#calculator {
-    width: 320px;
-    height: 520px;
-    background-color: #eaedef;
-    margin: 0 auto;
-    top: 20px;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#result {
-    height: 120px;
-}
-
-#keyboard {
-    height: 400px;
+.navigation {
+    background: rgb(193, 219, 242);
+    border-top: 7px solid rgb(7, 107, 166);
+    padding: 12px 35px !important;
+    align-items: center;
 
 }
 
-.operator,
-.number,
-.empty {
-    width: 50px;
-    height: 50px;
-    margin: 15px;
-    float: left;
-    border-radius: 50%;
-    border-width: 0;
-    font-weight: bold;
+.brand-logo {
+    height: 25px;
+    width: auto;
+}
+
+.navigation-link {
+    text-decoration: none;
     font-size: 15px;
-
+    font-weight: 450;
+    color: #083565 !important;
+    gap: 25px
 }
 
-.number,
-.empty {
-    background-color: #eaedef;
+.navigation-link:hover {
+    color: #031a31;
 }
 
-.number,
-.operator {
-    cursor: pointer;
+html {
+    scroll-behavior: smooth;
 }
 
-.operator.active,
-.number.active {
-    font-size: 13px;
+.m-heading {
+    font-family: "Roboto Slab", serif;
 }
 
-.operator:focus,
-.number:focus,
-.empty:focus {
-    outline: 0;
+.text-navy {
+    color: rgb(20, 70, 157);
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("beach.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    max-width: 10000px;
+    font-family: cursive;
+
 }
