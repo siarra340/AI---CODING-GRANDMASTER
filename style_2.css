@@ -1,42 +1,46 @@
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: #252525;
-    font-family: "Baloo Tamma 2", cursive;
+    background: #2b2b2b;
+    font-family: "Barlow TT", sans-serif;
 }
 
-.m-heading {
-    font-family: "Roboto Slab", serif;
+#project h1 {
+    font-weight: 900;
 }
 
-.text-white {
-    color: white;
-}
-
-.main-container {
-    height: 100vh;
+.card {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://github.com/harshacc031-dot/img/blob/main/1.png?raw=true');
-    background-attachment: fixed;
-    background-size: cover;
+    height: 100%;
+
 }
 
-.main-row {
+.card-img-top {
+    padding: 18px;
+    height: 13rem;
+    object-fit: contain;
+}
+
+.card-text {
+    color: #6f7780;
+    font-size: .85rem;
+}
+
+.btn-warning {
+    font-weight: 700;
+    font-size: .8rem;
+    border-radius: 3px;
+}
+
+.card-body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
 }
 
-.main-row h1 {
-    font-size: 5rem;
-}
-
-.main-row img {
-    width: auto;
-    height: 100vh;
+.card-body .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
