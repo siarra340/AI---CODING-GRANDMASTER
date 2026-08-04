@@ -1,55 +1,18 @@
 body {
-    margin: 0;
-    font-family: "Baloo Tamma 2", sans-serif;
-    background: #252525;
-}
-
-.navigation {
-    background: rgb(193, 219, 242);
-    border-top: 7px solid rgb(7, 107, 166);
-    padding: 12px 35px !important;
-    align-items: center;
+    background-image: linear-gradient(135deg, #70e1f5 15%, #E29587 50%);
 
 }
 
-.brand-logo {
-    height: 25px;
-    width: auto;
+.btn-outline-warning {
+    border-radius: 10px;
+    border-width: 2px;
+    font-weight: 600;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+    background-color: #e8e1cd;
+    color: rgb(71, 65, 65)
 }
 
-.navigation-link {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 450;
-    color: #083565 !important;
-    gap: 25px
-}
-
-.navigation-link:hover {
-    color: #031a31;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.m-heading {
-    font-family: "Roboto Slab", serif;
-}
-
-.text-navy {
-    color: rgb(20, 70, 157);
-}
-
-.main-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url("beach.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    max-width: 10000px;
-    font-family: cursive;
-
+.btn-outline-warning:hover {
+    background-color: #ffc107;
 }
