@@ -1,11 +1,2 @@
-# printing Hello World
-print("hello world!")
-
-# printing my name
-print("Siarra")
-
-# printing fun fact
-print("My favourite color is blue")
-
-# printing addition
-print("Total of two numbers is", 3+7)
+for i in range(1, 11):
+    print(f"23 x {i} = {23 *i}")
