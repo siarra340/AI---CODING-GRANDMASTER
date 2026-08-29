@@ -1,23 +1,19 @@
-num = int(input("Write a Number! "))
+def create_fibonacci(n):
+    series = []
+    num1, num2 = 0,1
 
-str_num = str(num)
-num_len = len(str_num)
+    for _ in range(n):
+        series.append(num1)
+        num1, num2 = num2, num1 + num2
 
-total_amount = 0
+    return series
 
-for digit_char in str_num:
+term = int(input("Enter the number of terms: "))
 
-    digit = int(digit_char)
-
-    total_amount += digit ** num_len
-
-if total_amount == num:
-    print(f"The number {num} is an Armstrong number")
+if term <= 0:
+    print("Enter a postive integer")
 else:
-    print(f"The number {num} is not an Armstrong number")
+    ans = create_fibonacci(term)
 
-    
-
-
-
-
+    print(f"The Fibonacci sequence up to {term} terms: ")
+    print(ans)
