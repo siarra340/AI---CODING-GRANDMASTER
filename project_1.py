@@ -1,39 +1,23 @@
-name = input("Enter your name: ")
-mood = input("How are you feeling today? happy/sad/tired/stressed/excited: ")
-energy = int(input("Enter your energy level from 1 to 10: "))
+num = int(input("Write a Number! "))
 
-if energy < 3:
-    print("Alert: Your energy seems low today. Take some rest if needed.")
+str_num = str(num)
+num_len = len(str_num)
 
-if energy >=5:
-    print("You have enough energy to do something productive today!")
+total_amount = 0
+
+for digit_char in str_num:
+
+    digit = int(digit_char)
+
+    total_amount += digit ** num_len
+
+if total_amount == num:
+    print(f"The number {num} is an Armstrong number")
 else:
-    print("Take it slow today and do something relaxing.")
+    print(f"The number {num} is not an Armstrong number")
 
-if mood == "happy":
-   advice = "Keep spreading positivity"
-elif mood == "sad":
-   advice = "Talk to someone you trust or do something that makes you feel better"
-elif mood == "tired":
-   advice = "Drink water and rest you mind"
-elif mood == "stressed":
-    advice = "Try taking deep breathes"
-elif mood == "excited":
-    advice = "Use your excitment to do somehting creative!"
-else:
-    advice = "Every mood is okay. Take care of yourself today."
+    
 
-import datetime
 
-today = datetime.datetime.now()
 
-print("\n================================")
-print("DAILY MOOD ADVISOR REPORT")
-print("=================================")
-print("Name: ", name)
-print("Mood: ", mood)
-print("Energy Level: ", energy)
-print("Date and Time: ", today)
-print("Advice: ", advice)
-print("===================================")
 
