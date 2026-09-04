@@ -1,51 +1,38 @@
-books = ["Harry Potter", "Matilda", "The Jungle Book", "Charlotte's Web", "Wonder"]
+import turtle
 
-print("Library Book List:", books)
-print("Total Books:", len(books))
-print(f"First Book: {books[0]}")
-print(f"Last Book: {books[-1]}")
-print("First Two Books:", books[:2])
-
-books.append("Diary of a Wimpy Kid")
-print("After Adding Book:", books)
-
-books.remove("The Jungle Book")
-print("After Removing a Book:", books)
-
-books.sort()
-print(f"Books Sorted Alphabetically: {books}")
-
-books.reverse()
-print(f"Books in Reverse Order: {books}")
-
-librarian = {"name": "Ms. Priya", "section": "Children's Books", "experience": 5}
-
-print(f"Librarian profile: {librarian}")
+screen = turtle.Screen()
+screen.bgcolor("black")
+screen.title("Color Loop Artwork")
 
 
-print("Librarian Name:", librarian["name"])
-print("Librarian Section:", librarian["section"])
-print("Experience:", librarian["experience"])
+artist = turtle.Turtle()
+artist.speed("fastest")
+artist.hideturtle()
+artist.pensize(2)
 
-librarian["experience"]=  7
-print("Updated Experience:", librarian)
+def draw_petal(size, colour):
+    artist.color(colour)
+    artist.begin_fill()
 
-librarian["email"]= "priya@schoollibrary.com"
-print("After Adding Email:", librarian)
+    for _ in range(2):
+        artist.circle(size, 60)
+        artist.left(120)
 
-librarian.pop("section")
-print("After Removing Section:", librarian)
+    artist.end_fill()
 
-books_ids = [101, 102, 103, 104, 105]
-book_names = ["Matilda", "Wonder", "Harry Potter", "Charlotte's Web", "Diary of a Wimpy Kid"]
+colours = ["red", "orange", "yellow", "lime", "cyan", "blue", "magenta"]
 
-book_directory = dict(zip(books_ids, book_names))
-print("Book Directory:", book_directory)
+for i in range(36):
+    draw_petal(90, colours[i % len(colours)])
+    artist.right(10)
 
-print("============================")
-print("LIBRARY ORGANISER SUMMARY")
-print("============================")
-print("Available Books: ", books)
-print("Librarian Details:", librarian)
-print("Book ID Directory:", book_directory)
-print("============================")
+artist.penup()
+artist.goto(0, -25)
+artist.pendown()
+
+artist.color("white")
+artist.begin_fill()
+artist.circle(25)
+artist.end_fill()
+
+turtle.done()
