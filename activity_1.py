@@ -1,44 +1,35 @@
-import turtle
-screen = turtle.Screen()
-screen.bgcolor("black")
-screen.title("Neon Mandala")
+pasta = ("Pasta Arrabiata", "Italian", 20, "Medium")
+biryani = ("Chicken Birynai", "Indian", 45, "Hard")
+print("Recipe 1:", pasta)
+print(f"Name: {pasta[0]}")
+print("Cusine:", pasta[1])
+print(f"Difficulity: {pasta[-1]}")
 
-board = turtle.Turtle()
-board.speed("fastest")
-board.hideturtle()
+all_recipes = (pasta, biryani)
+print("\nFirst recipe name:", all_recipes[0][0])
+print("Second recipe time:", all_recipes[1][2], "mins")
+print("Pasta details (sliced):", pasta[1:3])
 
-colors = ["red", "orange", "yellow", "lime", "cyan", "violet", "white"]
+print("\nPasta Recipe details:")
+for details in pasta:
+    print(" -", details)
 
-for i in range(80):
-    board.color(colors[i % len(colors)])
-    board.width(2)
-    board.forward(i * 2)
-    board.right(91)
+pasta_ingredients = {"tomato", "garlic", "olive oil", "chili", "pasta", "garlic"}
+biryani_ingredients = {"rice", "chicken", "garlic", "onion", "tomato", "spices"}
+print("\nPasta ingredients:", pasta_ingredients)
+print(f"Biryani ingredients: {biryani_ingredients}")
+print("Total pasta ingredients:", len(pasta_ingredients))
 
-board.penup()
-board.goto(0, -60)
-board.setheading(90)
-board.pendown()
-board.color("gold", "yellow")
-board.begin_fill()
-for i in range(5):
-    board.forward(130)
-    board.right(144)
-board.end_fill()
+pasta_ingredients.add("parmesan")
+pasta_ingredients.discard("chili")
+print("\nUpdated pasta ingredients:", pasta_ingredients)
 
+all_ingredients = pasta_ingredients.union(biryani_ingredients)
+common = pasta_ingredients.intersection(biryani_ingredients)
+only_biryani = biryani_ingredients.difference(pasta_ingredients)
+unique_to_each = pasta_ingredients.symmetric_difference(biryani_ingredients)
 
-board.penup()
-board.gotop(0, 0)
-board.pendown()
-petal_colors = ["cyan", "lime", "violet", "orange", "deeppink"]
-for i in range(36):
-    board.color(petal_colors[i % len(petal_colors)]),
-    petal_colors[(i + 2) % len(petal_colors)]
-    board.begin_fill()
-    for j in range(4):
-        board.forward(55)
-        board.right(90)
-    board.end_fill()
-    board.right(10)
-
-turtle.done()
+print("\nAll ingredients (union):", all_ingredients)
+print(f"Common ingredients (intersection): {common}")
+print(f"Only in Biryani (difference): {only_biryani} ")
+print("Not shared (sym. difference):", unique_to_each)
