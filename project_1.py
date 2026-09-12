@@ -1,58 +1,21 @@
-student_profile = ("Aarav", "Grade 6", "Section A", 6)
+class Robot:
 
-print(f"Student Profile: {student_profile}")
+    function = "assit humans and make tasks easier"
 
-student_name = student_profile[0]
-grade = student_profile[1]
-section = student_profile[2]
-total_subjects = student_profile[3]
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-print("\nStudent Name:", student_name)
-print(f"Grade: {grade}")
-print(f"Section: {section}")
-print("Total Subjects:", total_subjects)
+    def intro(self):
+        print(f"My name is {self.name} and I am {self.age} years old.")
 
-print("First two details: ", student_profile[0:2])
+    def hobby(self, hobby):
+        return "{} likes to {} as a hobby".format(self.name, hobby)
 
-#SETS
+robot = Robot("Julie", 10)
 
-monday_subjects = {"Math", "Science", "English", "Computer", "Art"}
-tuesday_subjects = {"Math", "History", "English", "Sports", "Music"}
+robot.intro()
 
-print("\nMonday Subjects:", monday_subjects)
-print("Tuesday Subjects:", tuesday_subjects)
+print(f"{robot.name}'s function is to {robot.function}")
 
-monday_subjects.add("Library")
-print("\nAfter adding Library to Monday:", monday_subjects)
-
-monday_subjects.discard("Art")
-print("After removing Art from Monday:", monday_subjects)
-
-tuesday_subjects.add("Computer")
-print("After adding Computer to Tuesday:", tuesday_subjects)
-
-tuesday_subjects.discard("Music")
-print("After remvoing Music from Tuesday:", tuesday_subjects)
-
-all_subjects = monday_subjects.union(tuesday_subjects)
-common_subjects = monday_subjects.intersection(tuesday_subjects)
-only_monday = monday_subjects.difference(tuesday_subjects)
-only_tuesday = tuesday_subjects.difference(monday_subjects)
-different_subjects = monday_subjects.symmetric_difference(tuesday_subjects)
-
-print("\nAll Subjects:", all_subjects)
-print("Common Subjects:", common_subjects)
-print("Only Monday Subjects:", only_monday)
-print("Only Tuesday Subjects:", tuesday_subjects)
-print("Different Subjects:", different_subjects)
-
-print("\n================================")
-print("SCHOOL SUBJECT PLANNER SUMMARY")
-print("================================")
-print("Student:", student_name)
-print("Grade", grade)
-print(f"Monday Subjects: {monday_subjects}")
-print(f"Tuesday Subjects: {tuesday_subjects}")
-print("Subjects on Both Days:", common_subjects)
-print(f"All Unique Subjects:", all_subjects)
-print("==============================")
+print(robot.hobby("read"))
