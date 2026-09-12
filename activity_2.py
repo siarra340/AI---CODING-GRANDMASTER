@@ -1,8 +1,14 @@
-n = int(input("Enter the number of rows: "))
+class student:
+    grade = 10
+    name = "Penguin"
 
-for i in range(1, n+1):
+    def intro(self):
+        print("Hi I am a student")
 
-    for j in range(i):
+    def details(self):
+        print("My name is", self.name)
+        print("My grade is", self.grade)
 
-        print('*', end='')
-    print()
+ob = student()
+ob.intro
+ob.details
