@@ -1,53 +1,59 @@
-from abc import ABC, abstractmethod
+class Cricket:
+    def __init__(self, player, score):
+        self.__player = player
+        self.__score = score
 
-class Animal(ABC):
+    def info(self):
+        print(f"Cricket  - Player: {self.__player}, Score: {self.__score}")
 
-    def __init__(self, name, habitat):
-        self.name = name
-        self.habitat = habitat
+    def play(self):
+        print(f"{self.__player} hits a six")
 
+    def get_score(self):
+        return self.__score
 
-    def display(self):
-        print(f"Name: {self.name} | Habitat: {self.habitat}")
+    def set_score(self, new_score):
 
-    @abstractmethod
-    def speak(self):
-        pass
+        if new_score >= 0:
+            self.__score = new_score
+            print(f"Score updated to {self.__score}")
+        else:
+            print("Score cannot be negative.")
 
-class Dog(Animal):
+class Football:
+    def __init__(self, player, score):
+        self.__player = player
+        self.__score = score
 
-    def __init__(self, name, habitat, breed):
-        super().__init__(name, habitat)
-        self.breed = breed
+    def info(self):
+        print(f"Football - Player: {self.__player}, Score: {self.__score}")
 
-    def speak(self):
-        print(f"{self.name} ({self.breed}) says: Woof! Woof!")
+    def play(self):
+        print(f"{self.__player} scores a goal!")
 
-class Parrot(Animal):
+    def get_score(self):
+        return self.__score
 
-    def __init__(self, name, habitat, phrase):
-        super().__init__(name, habitat)
-        self.phrase = phrase
+    def set_score(self, new_score):
+        if new_score >= 0:
+            self.__score = new_score
+            print(f"Score updated to {self.__score}")
+        else:
+            print("Score cannot be negative.")
 
-    def speak(self):
-        print(f"{self.name} says: {self.phrase}! {self.phrase}!")
-  
+cricket = Cricket("Rohit", 85)
+football = Football("Arjun", 2)
 
-class Lion(Animal):
-
-    def __init__(self, name, habitat, pride):
-        super().__init__(name, habitat)
-        self.pride = pride
-
-    def speak(self):
-        print(f"{self.name} (Pride: {self.pride}) says: ROARRRR!")
-
-dog = Dog("Bruno", "Home", "Labrador")
-parrot = Parrot("Polly", "Jungle", "Squawk")
-lion = Lion("Simba", "Savannah", "Pride Rock")
-
-print("=== Animal Sound Show ===\n")
-for animal in [dog, parrot, lion]:
-    animal.display()
-    animal.speak()
+print("=== Sports Scoreboard ===\n")
+for sport in (cricket, football):
+    sport.info()
+    sport.play()
     print()
+
+print("--- Direct change attempt ---")
+cricket.__score = 999
+print(f"get_score() still shows: {cricket.get_score()}")
+
+print("\n--- Updating scores ---")
+cricket.set_score(100)
+football.set_score(3)
