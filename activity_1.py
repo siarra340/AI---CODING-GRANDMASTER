@@ -1,28 +1,34 @@
-file = open("bucket-list.txt", "w")
-file.write("1. Vist the Effiel Tower\n")
-file.write("2. Learn to play the guitar\n")
-file.write("3. Code my own game\n")
+n = int(input("How many charcters to preview? "))
+file = open("class-notes.txt", "r")
+print(file.read(n))
 file.close()
-print("Bucket list saved to bucket-list.txt!")
+print()
 
-file = open("bucket-list.txt", "r")
-content = file.read()
-print("\n=== My Bucket List ===")
-print(content)
-file.close()
-
-file = open("bucket-list.txt", "r")
+file = open("class-notes.txt", "r")
 lines = file.readlines()
-print(f"You have {len(lines)} items in you bucket list.")
 file.close()
+print("Total lines:", len(lines))
 
-file = open('bucket-list.txt', 'a')
-file.write("4. Travel to Japan\n")
-file.write("5. Run a 5k marathon\n")
-file.close()
-print("\n More items added!")
+for i in range(len(lines)):
+    print(i + 1, "->", lines[i].strip())
+print()
 
-file = open("bucket-list.txt", "r")
-print("\n=== Updated Bucket List ===")
-print(file.read())
+word = input("Skip lines starting with: ")
+file = open("class-notes.txt", "r")
+for line in file:
+    if line.startswith(word):
+        print("skip ->", line.strip())
+    else:
+        print("keep ->", line.strip())
 file.close()
+print()
+
+file = open("class-notes.txt", "r")
+lines = file.readlines()
+file.close()
+out = open("odd-lines.txt", "w")
+for i in range(0, len(lines), 2):
+    out.write(lines[i])
+out.close()
+print("Odd lines saved to odd-line.txt")
+
