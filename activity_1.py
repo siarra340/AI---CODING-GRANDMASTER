@@ -1,34 +1,50 @@
-n = int(input("How many charcters to preview? "))
-file = open("class-notes.txt", "r")
-print(file.read(n))
-file.close()
+import os
+
+with open('science-notes.txt', 'w') as f:
+    f.write('Planets orbit the Sun\n')
+    f.write('The Moon causes tides\n')
+    f.write('Light is faster than sound\n')
+    f.write('Plants convert sunlight to food\n')
+
+
+
+print('=== Science Notes ===')
+with open("science-notes.txt", "r") as f:
+  for line in f:
+         print(line.strip())
 print()
 
-file = open("class-notes.txt", "r")
-lines = file.readlines()
-file.close()
-print("Total lines:", len(lines))
-
-for i in range(len(lines)):
-    print(i + 1, "->", lines[i].strip())
+print('=== Word Count ===')
+with open("maths-notes.txt", "r") as f:
+    for line in f:
+        word = line.split()
+        print(len(word), "words ->", line.strip())
 print()
 
-word = input("Skip lines starting with: ")
-file = open("class-notes.txt", "r")
-for line in file:
-    if line.startswith(word):
-        print("skip ->", line.strip())
-    else:
-        print("keep ->", line.strip())
-file.close()
-print()
+print("=== Merging Notes ===")
+if os.path.exists("all-notes.txt"):
+    print("all-notes.txt already exists - overwriting")
+else:
+    print("all-notes.txt not found - creating now")
 
-file = open("class-notes.txt", "r")
-lines = file.readlines()
-file.close()
-out = open("odd-lines.txt", "w")
-for i in range(0, len(lines), 2):
-    out.write(lines[i])
-out.close()
-print("Odd lines saved to odd-line.txt")
+content = ''
+with open('science-notes.txt', 'r') as f:
+    content += '--- science-notes.txt ---\n'
+    content += f.read() + "\n"
+with open("maths-notes.txt", "r") as f:
+    content += "--- maths.notes.txt ---\n"
+    content += f.read() + "\n"
+with open('all-notes.txt', 'w') as out:
+    out.write(content)
+    print("Saved to all-notes.txt")
+    print()
+
+if os.path.exists('all-notes.txt'):
+    os.remove('all-notes.txt')
+    print('all-notes.txt deleted')
+else:
+    print('all-notes.txt does not exist')
+
+
+
 
