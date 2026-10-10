@@ -1,64 +1,67 @@
-class ArtGallery:
+import os
 
-    def __init__(self, gallery_name, location):
-        self.gallery_name = gallery_name
-        self.location = location
-        self.artworks = []
+science_notes = [
+    "Plants need sunlight and water\n",
+    "The Earth moves around the sun\n",
+    "Water can change into ice and steam\n"
+]
 
-        print(f"\nWelcome to {self.gallery_name}")
-        print(f"Location: {self.location}")
-        print("Art gallery collection is ready.")
+maths_notes =[
+    "Addition means finding the total\n",
+    "Subtraction means taking away\n",
+    "Multiplication is repeated addition\n"
+]
 
-    def add_artwork(self, artwork):
-        self.artworks.append(artwork)
-        print(f"'{artwork}' has been added to the gallery collection.")
+with open('science-notes.txt', 'w') as f:
+    f.writelines(science_notes)
 
-    def remove_artwork(self, artwork):
-        if artwork in self.artworks:
-            self.artworks.remove(artwork)
-            print(f"'{artwork}' has been removed from the gallery collection.")
-        else:
-            print(f"'{artwork}' was not found in the gallery collection.")
+with open('maths-notes.txt', 'w') as f:
+    f.writelines(maths_notes)
 
-    def display_artworks(self):
-        print(f"\n--- {self.gallery_name} Art Collection ---")
+with open('science-notes.txt', 'r') as f:
+    for line in f:
+        print(line.strip())
 
-        if self.artworks:
-            for i, artwork in enumerate(self.artworks, 1):
-                print(f"{i}. {artwork}")
-        else:
-            print("No artworks have been added yet.")
+with open('maths-notes.txt', 'r') as f:
+    for line in f:
+        word = line.split()
+        print(len(word), 'words->', line.strip())
 
-    def __del__(self):
-        print(f"\nClosing {self.gallery_name}. Thank you for managing the art collection!")
+merged_file = "all-study-notes.txt"
 
-gallery = ArtGallery("Creative Canvas Gallery", "Bengaluru")
+if os.path.exists('merged_file'):
+    print(merged_file, 'already exists.')
+else:
+    print(merged_file, "does not exist yet.")
 
-while True:
-    print("\n=========== ART GALLERY MENU ===========")
-    print("1. Add Artwork")
-    print("2. Remove Artwork")
-    print("3. Display Art Collection")
-    print("4. Exit")
-    print("========================================")
+if os.path.exists('merged-file'):
+    os.remove('merged-file')
+    print("Old merged file removed.")
+else:
+    print("No old merged file to remove.")
 
-    choice = input("Enter your choice: ")
+with open(merged_file, 'w') as output:
+    output.write("=== SCIENCE NOTES ===\n")
 
-    if choice == "1":
-        artwork_name = input("Enter the artwork name to add: ")
-        gallery.add_artwork(artwork_name)
+    with open('science-notes.txt', 'r') as science:
+        output.write(science.read())
 
-    elif choice == "2":
-        artwork_name = input("Enter the artwork name to remove: ")
-        gallery.remove_artwork(artwork_name)
+    output.write("=== MATH NOTES ===\n")
 
-    elif choice == "3":
-        gallery.display_artworks()
+    with open('maths-notes.txt', 'r') as math:
+        output.write(math.read())
 
-    elif choice == "4":
-        print("Exiting the Art Gallery Collection Manager.")
+print("Science and Maths notes merged successfully.")
 
-        del gallery
-        break
-    else:
-        print("Invaild choice. Please enter a number from 1 to 4.")
+print("Merged Study Notes:")
+
+with open(merged_file, 'r') as f:
+    for line in f:
+        print(line.strip())
+
+
+
+
+
+
+
